@@ -1,0 +1,82 @@
+
+
+
+
+* {
+    font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: medium;
+        font-style: normal;
+    margin: 0;
+}
+
+h1, h2 ,h3,h4,h5,h6, .dropdownNavBar a , .dropdownButton {
+    font-family: "Trirong", serif;
+        font-weight: 600;
+        font-style: normal;
+}
+
+:root {
+    --darkGreen: #13370D;
+    --lightBrown: #BA8B6B;
+    --hoverGreen: #3f6139;
+}
+
+/* Nav */
+.logoen{
+    width: 4rem;
+    padding: 1rem;
+   
+}
+.dropdownNavBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.dropdownNavBar a {
+    font-size: 1rem;
+    color: var(--darkGreen);
+    text-decoration: none;
+    padding: 1rem;
+    
+}
+.dropdown{
+    position: relative;
+}
+.dropdown .dropdownButton{
+    font-size: 1rem;
+    border:none;
+    outline: none;
+    background-color: white;
+    padding:1rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: var(--darkGreen);
+    min-width: 200px;
+    border-radius: 0 0 10px 10px;
+}
+.dropdownContent a{
+    background-color: #13370D;
+    color: white;
+    padding:  20px  40px ;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    border-radius: 0 0 10px 10px;
+}
+
+.dropdownContent a:hover {
+    background-color: #3f6139;
+
+}
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
