@@ -20,5 +20,5 @@ jobs:
         target-server: ssh.ci1oaw5p7.service.one
         remote-user: ci1oaw5p7_ssh
         private-ssh-key: ${{ secrets.SSH_KEY }}
-        source-path: ./wp-content/themes/valgfagsProjekt/
+        source-path: ./wp-content/themes/twentytwentyfour/
         destination-path: webroots/by-route/valgfagtest.antonshjemmeside.dk_/wp-content/themes/twentytwentyfour
