@@ -12,6 +12,18 @@
  * Register block styles.
  */
 
+function custom_test_styles() {
+    echo '<style>
+        body {
+            background-color: #ff6b !important;
+        }
+        .site-title {
+            color: #4ecdc4 !important;
+        }
+    </style>';
+}
+add_action('wp_head', 'custom_test_styles');
+
 if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 	/**
 	 * Register custom block styles
