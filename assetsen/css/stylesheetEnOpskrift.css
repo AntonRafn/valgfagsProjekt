@@ -8,6 +8,8 @@
         font-weight: medium;
         font-style: normal;
     margin: 0;
+    line-height: 1.5rem;
+    text-wrap: 80ch;
 }
 
 h1, h2 ,h3,h4,h5,h6, .dropdownNavBar a , .dropdownButton {
@@ -88,14 +90,16 @@ color: var(--lightBrown);
     color: #BA8B6B;
 }
 
-/*Opskrift*/
+/*Opskrift info*/
 .opskriftCard {
     background: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    max-width: 900px;
+    padding-top: 30px;
     margin: auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid var(--lightBrown);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-top: 5px solid var(--lightBrown);
+    padding-left: 30px;
 }
 
 .opskrift-header {
@@ -109,13 +113,11 @@ color: var(--lightBrown);
     max-width: 65%;
 }
 
-.opskriftHeader h1 {
-    margin: 0;
-    color: #2c3e50;
-}
+
 
 .opskriftHeader p {
     margin-top: 10px;
+    padding-bottom: 20px;
     line-height: 1.5;
 }
 
@@ -127,12 +129,13 @@ color: var(--lightBrown);
 }
 
 .stars {
-    color: #2c3e50;
     font-size: 18px;
 }
 
 .author {
     text-align: center;
+    position: relative;
+    margin-right: 5rem;
 }
 
 .author img {
@@ -140,6 +143,7 @@ color: var(--lightBrown);
     height: 80px;
     border-radius: 50%;
     margin-top: 10px;
+    object-fit: cover;
     
 }
 
@@ -147,7 +151,6 @@ color: var(--lightBrown);
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    border-top: 1px solid #ddd;
     padding-top: 20px;
 }
 
@@ -164,5 +167,68 @@ color: var(--lightBrown);
 .details p {
     margin: 5px 0 0;
     font-size: 14px;
-    color: #555;
+}
+
+/*Opskrift ingredients*/
+
+.opskriftContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+}
+.ingredients {
+    flex: 1;
+}
+
+.ingredients ul {
+    list-style-type: none;
+}
+.ingredients li{
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+}
+.ingredients li::before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: var(--lightBrown);
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    transform: translateX(-30px);
+}
+
+/* Opskrift steps*/
+.Steps {
+    flex: 2;
+}
+.Steps ol {
+    counter-reset: step;
+    list-style-type: none;
+}
+.Steps li{
+    counter-increment: step;
+    margin: 20px 0 ;
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    text-wrap: 50ch;
+}
+.Steps li::before{
+    content: counter(step);
+    position: absolute;
+    left: -20px;
+    transform: translateY(-40px);
+    transform: translateX(-50px);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--darkGreen);
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
