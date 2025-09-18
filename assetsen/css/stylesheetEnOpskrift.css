@@ -12,7 +12,7 @@
     text-wrap: 80ch;
 }
 
-h1, h2 ,h3,h4,h5,h6, .dropdownNavBar a , .dropdownButton {
+h1, h2 ,h3,h4,h5,h6, .navbar a , .dropdownButton {
     font-family: "Trirong", serif;
         font-weight: 600;
         font-style: normal;
@@ -26,36 +26,51 @@ h1, h2 ,h3,h4,h5,h6, .dropdownNavBar a , .dropdownButton {
 }
 
 /* Nav */
+nav {
+    background: white;
+    padding: 1rem 2rem;
+}
 
-.logoen{
-    width: 4rem;
-    padding: 2rem;
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     
 }
 
-.dropdownNavBar{
+.logo {
+    width: 4rem;
+    cursor: pointer;
+}
+
+.nav-links {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 2rem;
 }
-.dropdownNavBar a {
-    font-size: 1rem;
+
+.nav-links a,
+.dropdownButton {
+    font-size: 1,5rem;
     color: var(--darkGreen);
     text-decoration: none;
-    padding-left: 5rem;
-}
-.dropdown{
-    position: relative;
-    justify-content: right;
-}
-.dropdown .dropdownButton{
-    font-size: 1rem;
-    border:none;
-    outline: none;
-    background-color: white;
-    padding:1rem;
-    margin: 0;
+    background: none;
+    border: none;
     cursor: pointer;
+}
+.dropdownButton {
+    font-size: 1rem;
+}
+.nav-links :hover
+{
+    color: var(--lightBrown);
+}
+.dropdownContent:hover{
+background: var(--hoverGreen);
+}
+/* dropdown */
+.dropdown {
+    position: relative;
 }
 
 .dropdownContent {
@@ -63,37 +78,39 @@ h1, h2 ,h3,h4,h5,h6, .dropdownNavBar a , .dropdownButton {
     position: absolute;
     background-color: var(--darkGreen);
     min-width: 200px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
 }
-.dropdownContent a{
-    background-color: #13370D;
+
+.dropdownContent a {
+    background-color: var(--darkGreen);
     color: white;
-    padding:  20px  40px ;
+    padding: 10px 20px;
     text-decoration: none;
     display: block;
-    text-align: left;
-    white-space: nowrap;
-    border-radius: 0 0 10px 10px;
 }
 
 .dropdownContent a:hover {
-    background-color: #3f6139;
-
+    background-color: var(--hoverGreen); color: white;
 }
+
 .dropdown:hover .dropdownContent {
     display: block;
 }
-.navigation a:hover {
-color: var(--lightBrown);
-}
-.dropdownButton:hover{
-    color: #BA8B6B;
+
+.login a {
+    color: var(--darkGreen);
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /*Hero*/
 .heroSection img {
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     object-fit: cover;
 }
 
@@ -130,7 +147,7 @@ color: var(--lightBrown);
     padding-bottom: 20px;
     margin-bottom: 30px;
     border-top: 5px solid var(--lightBrown);
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 .opskrift-header {
@@ -205,8 +222,8 @@ color: var(--lightBrown);
 .opskriftContainer{
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 80px;
-    margin-left: 20px;
+    gap: 130px;
+    margin-left: 40px;
 }
 .ingredients {
     flex: 1;
@@ -234,7 +251,7 @@ color: var(--lightBrown);
 /* Opskrift steps*/
 .Steps {
     flex: 2;
-    width: 70ch;
+    width: 80ch;
 }
 .Steps ol {
     counter-reset: step;
@@ -268,9 +285,11 @@ color: var(--lightBrown);
 
 /* Tips */
 .tips{
-padding: 25px;
+padding-left: 40px;
 }
 .tips p{
-    padding-bottom: 15px;
-    width: 80ch;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-left: 50px;
+    width: 100ch;
 }
