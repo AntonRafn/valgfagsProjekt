@@ -8,7 +8,7 @@
         font-weight: medium;
         font-style: normal;
     margin: 0;
-    line-height: 1.5rem;
+    line-height: 1.8rem;
     text-wrap: 80ch;
 }
 
@@ -88,6 +88,37 @@ color: var(--lightBrown);
 }
 .dropdownButton:hover{
     color: #BA8B6B;
+}
+
+/*Hero*/
+.heroSection img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+/* Overskrifter */
+.overskrifter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+
+}
+
+.overskrifter h2 {
+    flex: 0 0 auto;
+    margin: 0 2rem;
+}
+
+.overskrifter::before,
+.overskrifter::after {
+    content: "";
+    flex: 1;
+    height: 4px;
+    background-color: var(--lightBrown);
+    border-radius: 2px;
+    margin: 0 2rem;
 }
 
 /*Opskrift info*/
@@ -175,6 +206,7 @@ color: var(--lightBrown);
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 80px;
+    margin-left: 20px;
 }
 .ingredients {
     flex: 1;
@@ -195,13 +227,14 @@ color: var(--lightBrown);
     background: var(--lightBrown);
     border-radius: 50%;
     position: absolute;
-    transform: translateY(-50%);
+    transform: translateY(-45%);
     transform: translateX(-30px);
 }
 
 /* Opskrift steps*/
 .Steps {
     flex: 2;
+    width: 70ch;
 }
 .Steps ol {
     counter-reset: step;
@@ -231,4 +264,13 @@ color: var(--lightBrown);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Tips */
+.tips{
+padding: 25px;
+}
+.tips p{
+    padding-bottom: 15px;
+    width: 80ch;
 }
