@@ -23,25 +23,27 @@ h1, h2 ,h3,h4,h5,h6, .dropdownNavBar a , .dropdownButton {
 }
 
 /* Nav */
+
 .logoen{
     width: 4rem;
-    padding: 1rem;
+    padding: 2rem;
+    
 }
+
 .dropdownNavBar{
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 .dropdownNavBar a {
     font-size: 1rem;
     color: var(--darkGreen);
     text-decoration: none;
-    padding: 1rem;
-    
+    padding-left: 5rem;
 }
 .dropdown{
     position: relative;
+    justify-content: right;
 }
 .dropdown .dropdownButton{
     font-size: 1rem;
@@ -77,5 +79,11 @@ h1, h2 ,h3,h4,h5,h6, .dropdownNavBar a , .dropdownButton {
 }
 .dropdown:hover .dropdownContent {
     display: block;
+}
+.navigation a:hover {
+color: var(--lightBrown);
+}
+.dropdownButton:hover{
+    color: #BA8B6B;
 }
 
