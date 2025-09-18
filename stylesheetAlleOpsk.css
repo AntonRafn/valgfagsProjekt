@@ -1,0 +1,93 @@
+* {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: medium;
+    font-style: normal;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.dropdownNavBar a,
+.dropdownButton {
+    font-family: "Trirong", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--darkGreen);
+}
+
+:root {
+    --darkGreen: #13370D;
+    --lightBrown: #BA8B6B;
+    --hoverGreen: #3f6139;
+}
+
+/*Hero sektion*/
+.alleOpskHero p {
+    padding: 1.5rem;
+font-size: 1.2rem;
+max-width: 80ch;
+}
+.heroSection img{
+    width: 1440px;
+    height: 700px;
+    object-fit: cover;
+}
+
+/* Overskrifter */
+.overskrifter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 ;
+
+}
+.overskrifter h2{
+    flex: 0 0 auto;
+    margin: 0 2rem;
+}
+.overskrifter::before,
+.overskrifter::after {
+    content: "";
+    flex: 1;
+    height: 4px;
+    background-color: var(--lightBrown);
+    border-radius: 2px;
+    margin: 0 2rem ;
+}
+/* Runde Kokke */
+.chefsSection {
+padding: 1.5rem;
+display: flex;
+flex-wrap: wrap;
+gap: 5rem;
+align-items: flex-start;
+justify-content: center;
+}
+.rundeKokke{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.rundeKokke img{
+    width: 355px;
+    height: 355px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.rundeKokke p{
+    margin: 0.2rem 0;
+}
+.rundeKokke a {
+    text-decoration: none;
+    color: black;
+}
+.rundeKokke a:hover{
+    color: #BA8B6B;
+}
