@@ -33,8 +33,8 @@ font-size: 1.2rem;
 max-width: 80ch;
 }
 .heroSection img{
-    width: 1440px;
-    height: 700px;
+    width: 100%;
+    height: 60vh;
     object-fit: cover;
 }
 
@@ -82,7 +82,9 @@ justify-content: center;
     margin-bottom: 1rem;
 }
 .rundeKokke p{
+    font-size: 1.2rem;
     margin: 0.2rem 0;
+    margin-bottom: 1rem;
 }
 .rundeKokke a {
     text-decoration: none;
@@ -90,4 +92,77 @@ justify-content: center;
 }
 .rundeKokke a:hover{
     color: #BA8B6B;
+}
+.rundeKokke img:hover{
+    width: 360px;
+    height: 360px;
+}
+
+/*Opskrift cards*/
+.allCards{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 50px;
+margin-top: 5rem;
+margin-bottom: 5rem;
+}
+.opskriftCard{ 
+    width: 373px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+}
+
+.card-img {
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    display: block;
+    height: 472px;
+    object-fit: cover;
+}
+
+.card-img .chefIcon {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid #fff;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+}
+
+.card-indhold {
+    padding: 1rem;
+}
+
+.card-indhold p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.stars {
+    color: black;
+    font-size: 1.1rem;
+}
+
+.votes {
+    font-weight: bold;
+}
+
+
+.opskriftCard:hover{
+    width: 382px;
 }
