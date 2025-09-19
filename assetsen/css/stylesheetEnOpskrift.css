@@ -47,11 +47,11 @@ nav {
     display: flex;
     align-items: center;
     gap: 2rem;
+    font-size: 20px;
 }
 
 .nav-links a,
 .dropdownButton {
-    font-size: 1,5rem;
     color: var(--darkGreen);
     text-decoration: none;
     background: none;
@@ -59,7 +59,7 @@ nav {
     cursor: pointer;
 }
 .dropdownButton {
-    font-size: 1rem;
+    font-size: 20px;
 }
 .nav-links :hover
 {
@@ -101,7 +101,7 @@ background: var(--hoverGreen);
 .login a {
     color: var(--darkGreen);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 20px;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -112,6 +112,23 @@ background: var(--hoverGreen);
     width: 100%;
     height: 70vh;
     object-fit: cover;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.welcome-text{
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.heroSection h1 {
+    padding-top: 10px;
+    font-size: 35px;
+}
+.welcome-text p{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /* Overskrifter */
@@ -140,14 +157,14 @@ background: var(--hoverGreen);
 
 /*Opskrift info*/
 .opskriftCard {
-    background: #fff;
     padding-top: 30px;
     margin: auto;
-    border-bottom: 5px solid var(--lightBrown);
+    border-bottom: 3px solid var(--lightBrown);
     padding-bottom: 20px;
     margin-bottom: 30px;
-    border-top: 5px solid var(--lightBrown);
+    border-top: 3px solid var(--lightBrown);
     padding-left: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .opskrift-header {
@@ -220,10 +237,11 @@ background: var(--hoverGreen);
 /*Opskrift ingredients*/
 
 .opskriftContainer{
+    
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 130px;
-    margin-left: 40px;
+    margin-left: 50px;
 }
 .ingredients {
     flex: 1;
@@ -244,7 +262,6 @@ background: var(--hoverGreen);
     background: var(--lightBrown);
     border-radius: 50%;
     position: absolute;
-    transform: translateY(-45%);
     transform: translateX(-30px);
 }
 
@@ -269,7 +286,6 @@ background: var(--hoverGreen);
     content: counter(step);
     position: absolute;
     left: -20px;
-    transform: translateY(-40px);
     transform: translateX(-50px);
     width: 70px;
     height: 70px;
@@ -286,10 +302,225 @@ background: var(--hoverGreen);
 /* Tips */
 .tips{
 padding-left: 40px;
+
 }
 .tips p{
     padding-bottom: 20px;
     padding-top: 20px;
     margin-left: 50px;
-    width: 100ch;
+    padding-right: 50px;
+}
+
+/* Runde Kokke */
+.chefsSection {
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    align-items: flex-start;
+    justify-content: center;
+    
+}
+
+.rundeKokke {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.rundeKokke img {
+    width: 355px;
+    height: 355px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rundeKokke p {
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+    margin-bottom: 1rem;
+}
+
+.rundeKokke a {
+    text-decoration: none;
+    color: black;
+}
+
+.rundeKokke a:hover {
+    color: #BA8B6B;
+}
+
+.rundeKokke img:hover {
+    width: 360px;
+    height: 360px;
+}
+
+/*Opskrift cards*/
+.allCards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.lilleOpskriftCard {
+    width: 373px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+}
+
+.card-img {
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    display: block;
+    height: 472px;
+    object-fit: cover;
+}
+
+.card-img .chefIcon {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid #fff;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+}
+
+.card-indhold {
+    padding: 1rem;
+}
+
+.card-indhold p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.stars {
+    color: black;
+    font-size: 1.1rem;
+}
+
+.votes {
+    font-weight: bold;
+}
+
+
+.lilleOpskriftCard:hover {
+    width: 382px;
+}
+
+/* Blog posts*/
+.blogPosts {
+    display: flex;
+    justify-content: center;
+}
+.BPCards {
+    border-top: 5px solid var(--lightBrown);
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    width: 1233px;
+    padding: 30px;
+}
+
+.BPCards img {
+    width: 410px;
+    height: 376;
+    object-fit: cover;
+}
+.BPCards h2 {
+    margin: 10px 0 10px;
+}
+.BPindhold {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.BPCards a {
+    padding-top: 20px;
+    text-decoration: none;
+    color: black;
+}
+/* Blog posts uden streg*/
+.BPCardsEnkel {
+
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    width: 1233px;
+    padding: 30px;
+}
+
+.BPCardsEnkel img {
+    width: 410px;
+    height: 376;
+    object-fit: cover;
+}
+
+.BPCardsEnkel h2 {
+    margin: 10px 0 10px;
+}
+
+.BPindhold {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.BPCardsEnkel a {
+    padding-top: 20px;
+    text-decoration: none;
+    color: black;
+}
+/* Enkelt story*/
+
+.storyIndhold {
+    padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+.storyIndhold p, .storyIndhold li{
+    padding-bottom: 20px;
+}
+
+
+.BPCards a:hover, .BPCardsEnkel a:hover{
+    color: var(--lightBrown);
+}
+/* Footer*/
+
+
+.copPri{
+display: flex;
+justify-content: center;
+gap: 40px;
+background: var(--darkGreen);
+color: white;
+padding: 30px;
+}
+.copPri p:hover{
+    color: var(--lightBrown);
 }
