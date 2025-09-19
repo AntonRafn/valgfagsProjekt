@@ -10,10 +10,12 @@ function create_brand_post_type() {
         'public' => true,
         'has_archive' => false, 
         'rewrite' => array('slug' => 'brand'),
-        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+        'supports' => array('title', 'editor', 'thumbnail')
     ));
 }
 add_action('init', 'create_brand_post_type');
+
+
 
 function valgfagsProjekt_enqueue_styles() {
     wp_enqueue_style(

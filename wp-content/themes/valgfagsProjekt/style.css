@@ -6,16 +6,136 @@ Author: Anton, Noah og Samanta
 */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-  --heading-color: #13370D;
-  --line-color: #BA8B6B;
+* {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: medium;
+    font-style: normal;
+    margin: 0;
+    line-height: 1.8rem;
+    text-wrap: 80ch;
 }
 
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+h1, h2 ,h3,h4,h5,h6, .navbar a , .dropdownButton {
+    font-family: "Trirong", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--darkGreen);
+}
+
+:root {
+    --darkGreen: #13370D;
+    --lightBrown: #BA8B6B;
+    --hoverGreen: #3f6139;
+}
+
+/* Nav */
+nav {
+    background: white;
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo {
+    width: 4rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a,
+.dropdownButton {
+    font-size: 1,5rem;
+    color: var(--darkGreen);
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.dropdownButton {
+    font-size: 1rem;
+}
+.nav-links :hover
+{
+    color: var(--lightBrown);
+}
+.dropdownContent:hover{
+background: var(--hoverGreen);
+}
+/* dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: var(--darkGreen);
+    min-width: 200px;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+
+.dropdownContent a {
+    background-color: var(--darkGreen);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownContent a:hover {
+    background-color: var(--hoverGreen); color: white;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.login a {
+    color: var(--darkGreen);
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Overskrifter */
+.overskrifter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+
+}
+
+.overskrifter h2 {
+    flex: 0 0 auto;
+    margin: 0 2rem;
+}
+
+.overskrifter::before,
+.overskrifter::after {
+    content: "";
+    flex: 1;
+    height: 4px;
+    background-color: var(--lightBrown);
+    border-radius: 2px;
+}
+
+
+/* Anton css */
 
 .spacer-wrapper {   
     max-width: 2120px;
@@ -24,30 +144,11 @@ Author: Anton, Noah og Samanta
 }
 
 
-h1,h2,h3,h4,h5,h6 {
-    color: var(--heading-color);
-    font-family: "Trirong", serif;
-    font-weight: 600;
-    font-size: 40px;
-}
 
-p {
-    font-family: "Quicksand", sans-serif;
-}
 
 .brands-intro {
     max-width: 1081px;
 }
-
-.brands-intro p {
-    font-size: 32px;
-
-}
-
-.brands-intro h1 {
-    font-size: 40px;
-}
-
 
 
 .brands-favourites h2 {
@@ -57,25 +158,15 @@ p {
   gap: 1rem;                  
 }
 
-
-.brands-favourites h2::before,
-.brands-favourites h2::after {
-  content: "";
-  flex: 1;                    
-  height: 4px;
-  border-radius: 9999px;                
-  background-color: var(--line-color)  
-}
-
 .brands-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-    .brand-card {
-            border-radius: 15px;
-            padding: 2rem;
+.brand-card {
+    border-radius: 15px;
+    padding: 2rem;
             text-align: left;
             transition: all 0.3s ease;
             border: 3px solid rgba(255, 255, 255, 0.2);
