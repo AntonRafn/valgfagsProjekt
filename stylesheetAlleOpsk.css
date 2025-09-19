@@ -1,0 +1,168 @@
+* {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: medium;
+    font-style: normal;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.dropdownNavBar a,
+.dropdownButton {
+    font-family: "Trirong", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--darkGreen);
+}
+
+:root {
+    --darkGreen: #13370D;
+    --lightBrown: #BA8B6B;
+    --hoverGreen: #3f6139;
+}
+
+/*Hero sektion*/
+.alleOpskHero p {
+    padding: 1.5rem;
+font-size: 1.2rem;
+max-width: 80ch;
+}
+.heroSection img{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+/* Overskrifter */
+.overskrifter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 ;
+
+}
+.overskrifter h2{
+    flex: 0 0 auto;
+    margin: 0 2rem;
+}
+.overskrifter::before,
+.overskrifter::after {
+    content: "";
+    flex: 1;
+    height: 4px;
+    background-color: var(--lightBrown);
+    border-radius: 2px;
+    margin: 0 2rem ;
+}
+/* Runde Kokke */
+.chefsSection {
+padding: 1.5rem;
+display: flex;
+flex-wrap: wrap;
+gap: 5rem;
+align-items: flex-start;
+justify-content: center;
+}
+.rundeKokke{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.rundeKokke img{
+    width: 355px;
+    height: 355px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.rundeKokke p{
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+    margin-bottom: 1rem;
+}
+.rundeKokke a {
+    text-decoration: none;
+    color: black;
+}
+.rundeKokke a:hover{
+    color: #BA8B6B;
+}
+.rundeKokke img:hover{
+    width: 360px;
+    height: 360px;
+}
+
+/*Opskrift cards*/
+.allCards{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 50px;
+margin-top: 5rem;
+margin-bottom: 5rem;
+}
+.opskriftCard{ 
+    width: 373px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+}
+
+.card-img {
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    display: block;
+    height: 472px;
+    object-fit: cover;
+}
+
+.card-img .chefIcon {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid #fff;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+}
+
+.card-indhold {
+    padding: 1rem;
+}
+
+.card-indhold p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.stars {
+    color: black;
+    font-size: 1.1rem;
+}
+
+.votes {
+    font-weight: bold;
+}
+
+
+.opskriftCard:hover{
+    width: 382px;
+}
