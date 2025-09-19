@@ -6,6 +6,12 @@ Author: Anton, Noah og Samanta
 */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --darkGreen: #13370D;
+    --lightBrown: #BA8B6B;
+    --hoverGreen: #3f6139;
+}
+
 * {
     font-family: "Quicksand", sans-serif;
     font-style: normal;
@@ -20,11 +26,7 @@ h1, h2 ,h3,h4,h5,h6, .navbar a , .dropdownButton {
     color: var(--darkGreen);
 }
 
-:root {
-    --darkGreen: #13370D;
-    --lightBrown: #BA8B6B;
-    --hoverGreen: #3f6139;
-}
+
 
 /* Nav */
 nav {
@@ -62,7 +64,7 @@ nav {
 .dropdownButton {
     font-size: 1rem;
 }
-.nav-links :hover
+.nav-links:hover
 {
     color: var(--lightBrown);
 }
