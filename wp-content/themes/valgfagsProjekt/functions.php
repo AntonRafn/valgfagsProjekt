@@ -29,7 +29,7 @@ function create_opskrift_post_type()
         'supports' => array('title', 'editor', 'thumbnail')
     ));
 }
-add_action('init', 'create_brand_post_type');
+add_action('init', 'create_opskrift_post_type');
 
 
 
