@@ -11,7 +11,7 @@
     
 <nav>
   <div class="navbar">
-    <img class="logo" src="/assetsen/images/logoen.jpg" alt="Logo" />
+    <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assetsen/images/logoen.jpg" alt="Logo" />
 
     <div class="nav-links">
       <div class="dropdown">
@@ -19,9 +19,9 @@
           Chefs <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="dropdownContent">
-          <a href="">Home chefs</a>
-          <a href="">Amateur chefs</a>
-          <a href="">Professional chefs</a>
+          <a href="#">Home chefs</a>
+          <a href="#">Amateur chefs</a>
+          <a href="#">Professional chefs</a>
         </div>
       </div>
       <a href="">Recipes</a>

@@ -24,3 +24,12 @@ function valgfagsProjekt_enqueue_styles() {
     );
 }
 add_action('wp_enqueue_scripts', 'valgfagsProjekt_enqueue_styles');
+
+
+
+
+
+function enqueue_font_awesome() {
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
