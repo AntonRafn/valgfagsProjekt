@@ -23,3 +23,12 @@ jobs:
         private-ssh-key: ${{ secrets.SSH_KEY }}
         source-path: ./
         destination-path: webroots/by-route/valgfagtest.antonshjemmeside.dk_/
+        exclude: |
+          wp-content/uploads/
+          .git/
+          .github/
+          README.md
+          .gitignore
+          node_modules/
+        exclude-from-delete: |
+          wp-content/uploads/
