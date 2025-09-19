@@ -9,7 +9,7 @@
 
 <body>
     
-<nav>
+<nav style="background: red; height: 100px;">
   <div class="navbar">
     <!-- <img class="logo" src="/assetsen/images/logoen.jpg" alt="Logo" /> -->
 
