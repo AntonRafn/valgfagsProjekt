@@ -114,6 +114,7 @@ background: var(--hoverGreen);
     object-fit: cover;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 
 .welcome-text{
@@ -370,7 +371,6 @@ padding-left: 40px;
 .lilleOpskriftCard {
     width: 373px;
     border-radius: 8px;
-    background: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
 }
@@ -440,6 +440,7 @@ padding-left: 40px;
     width: 1233px;
     padding: 30px;
 }
+
 .BPCards img {
     width: 410px;
     height: 376;
@@ -460,9 +461,55 @@ padding-left: 40px;
     text-decoration: none;
     color: black;
 }
+/* Blog posts uden streg*/
+.BPCardsEnkel {
+
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    width: 1233px;
+    padding: 30px;
+}
+
+.BPCardsEnkel img {
+    width: 410px;
+    height: 376;
+    object-fit: cover;
+}
+
+.BPCardsEnkel h2 {
+    margin: 10px 0 10px;
+}
+
+.BPindhold {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.BPCardsEnkel a {
+    padding-top: 20px;
+    text-decoration: none;
+    color: black;
+}
+/* Enkelt story*/
+
+.storyIndhold {
+    padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+.storyIndhold p, .storyIndhold li{
+    padding-bottom: 20px;
+}
 
 
-
+.BPCards a:hover, .BPCardsEnkel a:hover{
+    color: var(--lightBrown);
+}
 /* Footer*/
 
 
