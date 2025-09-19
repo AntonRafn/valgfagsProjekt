@@ -1,0 +1,295 @@
+
+
+
+
+* {
+    font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: medium;
+        font-style: normal;
+    margin: 0;
+    line-height: 1.8rem;
+    text-wrap: 80ch;
+}
+
+h1, h2 ,h3,h4,h5,h6, .navbar a , .dropdownButton {
+    font-family: "Trirong", serif;
+        font-weight: 600;
+        font-style: normal;
+        color: var(--darkGreen);
+}
+
+:root {
+    --darkGreen: #13370D;
+    --lightBrown: #BA8B6B;
+    --hoverGreen: #3f6139;
+}
+
+/* Nav */
+nav {
+    background: white;
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo {
+    width: 4rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a,
+.dropdownButton {
+    font-size: 1,5rem;
+    color: var(--darkGreen);
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.dropdownButton {
+    font-size: 1rem;
+}
+.nav-links :hover
+{
+    color: var(--lightBrown);
+}
+.dropdownContent:hover{
+background: var(--hoverGreen);
+}
+/* dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: var(--darkGreen);
+    min-width: 200px;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+
+.dropdownContent a {
+    background-color: var(--darkGreen);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownContent a:hover {
+    background-color: var(--hoverGreen); color: white;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.login a {
+    color: var(--darkGreen);
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/*Hero*/
+.heroSection img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* Overskrifter */
+.overskrifter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+
+}
+
+.overskrifter h2 {
+    flex: 0 0 auto;
+    margin: 0 2rem;
+}
+
+.overskrifter::before,
+.overskrifter::after {
+    content: "";
+    flex: 1;
+    height: 4px;
+    background-color: var(--lightBrown);
+    border-radius: 2px;
+    margin: 0 2rem;
+}
+
+/*Opskrift info*/
+.opskriftCard {
+    background: #fff;
+    padding-top: 30px;
+    margin: auto;
+    border-bottom: 5px solid var(--lightBrown);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-top: 5px solid var(--lightBrown);
+    padding-left: 40px;
+}
+
+.opskrift-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.opskriftHeader{
+    max-width: 65%;
+}
+
+
+
+.opskriftHeader p {
+    margin-top: 10px;
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.stars {
+    font-size: 18px;
+}
+
+.author {
+    text-align: center;
+    position: relative;
+    margin-right: 5rem;
+}
+
+.author img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: 10px;
+    object-fit: cover;
+    
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.details div {
+    text-align: center;
+    flex: 1;
+}
+
+.details h3 {
+    margin: 0;
+    color: #064420;
+}
+
+.details p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+/*Opskrift ingredients*/
+
+.opskriftContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 130px;
+    margin-left: 40px;
+}
+.ingredients {
+    flex: 1;
+}
+
+.ingredients ul {
+    list-style-type: none;
+}
+.ingredients li{
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+}
+.ingredients li::before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: var(--lightBrown);
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-45%);
+    transform: translateX(-30px);
+}
+
+/* Opskrift steps*/
+.Steps {
+    flex: 2;
+    width: 80ch;
+}
+.Steps ol {
+    counter-reset: step;
+    list-style-type: none;
+}
+.Steps li{
+    counter-increment: step;
+    margin: 20px 0 ;
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    text-wrap: 50ch;
+}
+.Steps li::before{
+    content: counter(step);
+    position: absolute;
+    left: -20px;
+    transform: translateY(-40px);
+    transform: translateX(-50px);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--darkGreen);
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tips */
+.tips{
+padding-left: 40px;
+}
+.tips p{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-left: 50px;
+    width: 100ch;
+}
