@@ -8,12 +8,9 @@ Author: Anton, Noah og Samanta
 
 * {
     font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: medium;
     font-style: normal;
     margin: 0;
     line-height: 1.8rem;
-    text-wrap: 80ch;
 }
 
 h1, h2 ,h3,h4,h5,h6, .navbar a , .dropdownButton {
@@ -55,7 +52,7 @@ nav {
 
 .nav-links a,
 .dropdownButton {
-    font-size: 1,5rem;
+    font-size: 1.5rem;
     color: var(--darkGreen);
     text-decoration: none;
     background: none;
