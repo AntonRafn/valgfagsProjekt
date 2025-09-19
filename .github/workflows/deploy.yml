@@ -17,18 +17,8 @@ jobs:
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1
       with:
-      
         target-server: ssh.ci1oaw5p7.service.one
         remote-user: ci1oaw5p7_ssh
         private-ssh-key: ${{ secrets.SSH_KEY }}
-        source-path: ./
-        destination-path: webroots/by-route/valgfagtest.antonshjemmeside.dk_/
-        exclude: |
-          wp-content/uploads/
-          .git/
-          .github/
-          README.md
-          .gitignore
-          node_modules/
-        exclude-from-delete: |
-          wp-content/uploads/
+        source-path: ./wp-content/themes/valgfagsProjekt/
+        destination-path: webroots/by-route/valgfagtest.antonshjemmeside.dk_/wp-content/themes/valgfagsProjekt
