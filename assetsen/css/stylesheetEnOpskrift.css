@@ -511,15 +511,30 @@ padding-left: 40px;
     color: var(--lightBrown);
 }
 /* Footer*/
-
+footer{
+    background: var(--darkGreen);
+        color: white;
+        padding: 30px;
+}
+.kundeInfo {
+    padding-bottom: 30px;
+}
+.footerInfo img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+object-fit: cover;
+}
+.profilInfo {
+    display: flex;
+    gap: 40px;
+}
 
 .copPri{
 display: flex;
 justify-content: center;
 gap: 40px;
-background: var(--darkGreen);
-color: white;
-padding: 30px;
+
 }
 .copPri p:hover{
     color: var(--lightBrown);
