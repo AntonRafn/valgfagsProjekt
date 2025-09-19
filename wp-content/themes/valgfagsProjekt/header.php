@@ -11,7 +11,7 @@
   <header>
 <nav >
   <div class="navbar">
-    <!-- <img class="logo" src="/assetsen/images/logoen.jpg" alt="Logo" /> -->
+    <img class="logo" src="/assetsen/images/logoen.jpg" alt="Logo" />
 
     <div class="nav-links">
       <div class="dropdown">
