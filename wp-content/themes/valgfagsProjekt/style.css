@@ -59,9 +59,7 @@ nav {
     border: none;
     cursor: pointer;
 }
-.dropdownButton {
-    font-size: 1rem;
-}
+
 .nav-links:hover
 {
     color: var(--lightBrown);
