@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    
-<nav style="background: red; height: 100px;">
+  <header>
+<nav >
   <div class="navbar">
     <!-- <img class="logo" src="/assetsen/images/logoen.jpg" alt="Logo" /> -->
 
@@ -35,4 +35,5 @@
     </div>
   </div>
 </nav>
+</header>
 <div class="spacer-wrapper">
