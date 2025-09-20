@@ -166,3 +166,61 @@ margin-bottom: 5rem;
 .opskriftCard:hover{
     width: 382px;
 }
+
+ /* Filter */
+
+.filterSortFunction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+.filter h2{
+    font-size: 25px;
+}
+.filterButton, .sortButton {
+    font-size: 20px; }
+
+.filter , .filterButton , .sort , .sortButton{
+        border: none;
+        outline: none;
+        background-color: white;
+        padding: 1rem;
+        margin: 0;
+        cursor: pointer;
+}
+
+.filterContent , .sortContent{
+        display: none;
+        position: absolute;
+        background-color: var(--darkGreen);
+        min-width: 200px;
+        border-radius: 0 0 20px 20px;
+        overflow: hidden;
+}
+
+.filterContent a , .sortContent a {
+    background-color: #13370D;
+        color: white;
+        padding: 20px 40px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        white-space: nowrap;
+        border-radius: 0 0 10px 10px;
+}
+
+.sort:hover .sortContent {
+    display: block;
+}
+.filter:hover .filterContent {
+    display: block;
+}
+
+.filterContent a:hover, .sortContent a:hover{
+    background-color: var(--hoverGreen);
+}
+.filter,
+.sort {
+    position: relative;
+}
