@@ -24,7 +24,7 @@ function create_opskrift_post_type()
             'singular_name' => 'Opskrift'
         ),
         'public' => true,
-        'has_archive' => false,
+        'has_archive' => true,
         'rewrite' => array('slug' => 'opskrift'),
         'supports' => array('title', 'editor', 'thumbnail')
     ));

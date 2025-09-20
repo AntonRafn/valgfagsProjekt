@@ -11,7 +11,7 @@
   <header>
 <nav >
   <div class="navbar">
-    <img class="logo" src="/assetsen/images/logoen.jpg" alt="Logo" />
+    <a href="<?php echo home_url('/'); ?>"><img class="logo" src="/assetsen/images/logoen.jpg" alt="Logo" /></a>
 
     <div class="nav-links">
       <div class="dropdown">
@@ -24,9 +24,9 @@
           <a href="#">Professional chefs</a>
         </div>
       </div>
-      <a href="">Recipes</a>
-      <a href="">Brands</a>
-      <a href="">Stories</a>
+      <a href="<?php echo get_post_type_archive_link('opskrift'); ?>">Recipes</a>
+      <a href="<?php echo get_post_type_archive_link('brand'); ?>">Brands</a>
+      <a href="<?php echo get_post_type_archive_link('story'); ?>">Stories</a>
 
     </div>
 

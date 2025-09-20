@@ -9,7 +9,7 @@
         <section class="heroSection">
             <div class="enOpskriftHero">
                 <img
-                    src="<?php echo get_field('hero_image')['url'];  ?>"
+                    src="<?php echo get_field('billede_af_ret')['url']  ?>"
                     alt="" />
             </div>
             <div class="opskriftCard">
@@ -21,26 +21,26 @@
                         </p>
                         <div class="rating">
                             <span class="stars">★★★★☆</span>
-                            <span>3.8 | 8 ratings</span>
+                            <span><?php the_field('rating') ?> | 8 ratings</span>
                         </div>
                     </div>
                     <div class="author">
-                        <img src="./assetsen/images/marry&john.jpg" alt="" />
-                        <p>Marry & John S.</p>
+                        <img src="<?php echo get_field('kok_billede')['url']; ?>" alt="" />
+                        <p><?php the_field('kok_navn') ?></p>
                     </div>
                 </div>
                 <div class="details">
                     <div>
                         <h3>Prepare</h3>
-                        <p>Less than 30 mins</p>
+                        <p><?php the_field('prep') ?></p>
                     </div>
                     <div>
                         <h3>Cook time</h3>
-                        <p>30 min to 1 hour</p>
+                        <p><?php the_field('cooking_time') ?></p>
                     </div>
                     <div>
                         <h3>Serves</h3>
-                        <p>4 adults</p>
+                        <p><?php the_field('serving_size') ?></p>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 <div class="Steps">
                     <ol>
                         <?php
-                        $steps = get_field('steps');
+                        $steps = get_field('method');
                         $lines = explode("\n", $steps);
                         foreach ($lines as $line) {
                             $line = trim($line);
@@ -76,20 +76,20 @@
                     </ol>
                 </div>
         </section>
-    <?php }
-    ?>
+    
 
 
     <section class="TipsSection">
         <h2 class="overskrifter">Tips</h2>
         <div class="tips">
-            <p>This is also delicious served with little roasted potatoes, popped in the oven alongside the traybake.</p>
-            <p>If you’re a family of two, it’s worth squirrelling half into the freezer. If you’re feeding four or five, double the quantities and bake in two tins so that the sauce thickens nicely as the meatballs cook: once cool, the tin can be covered and put straight into the freezer. Defrost fully in the fridge overnight, then cover with foil and heat through in a preheated oven at 180C/160C Fan/Gas 4, or warm smaller portions in the microwave or on the hob.
-
-            </p>
+            <p><?php the_field('tips') ?></p>
+            
         </div>
 
     </section>
+
+    <?php }
+    ?>
     <section class="comments">
         <h2 class="overskrifter">Comments</h2>
 

@@ -549,6 +549,146 @@ gap: 40px;
 }
 
 
+/* Noah */
+.section-divider {
+  position: relative;
+  text-align: center;
+  margin: 0;
+}
+ 
+.section-divider h3 {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  color: #4a2c2a;
+  position: relative;
+  z-index: 1;
+}
+ 
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #4a2c2a;
+}
+ 
+.all-dishes {
+  text-align: center;
+  margin: 2rem auto;
+}
+ 
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+ 
+ 
+ 
+.all-dishes .dish-card .dish-img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+ 
+ 
+ 
+ 
+/* Enkelt kok hero */
+ 
+.chef-hero {
+  background-color: #fafafa;
+  padding: 60px 20px;
+}
+ 
+.hero-inner {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+ 
+}
+ 
+.hero-portrait-kok {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+ 
+.hero-text-kok p {
+  max-width: 600px;
+}
+ 
+.hero-photo-kok {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+ 
+.hero-text-kok h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #4a2c2a;
+  position: relative;
+}
+ 
+.hero-text h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #d96c2b;
+  margin-top: 10px;
+}
+ 
+.chef-title {
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+ 
+.chef-bio {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+ 
+.hero-photo-kok .stars {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: gold;
+  font-weight: bold;
+}
+ 
+ 
+ 
+/* Enkelt kok dishes */
+ 
+.dish-tag {
+  display: inline-block;
+  background: #e8e8e8;
+  color: black;
+  padding: 3px 8px;
+  margin: 5px 3px 0 0;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+ 
+.dish-time {
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
 
 /* Anton css */
 
