@@ -600,6 +600,7 @@ gap: 40px;
 .filterContent,
 .sortContent {
     display: none;
+    z-index: 9999;
     position: absolute;
     background-color: var(--darkGreen);
     min-width: 200px;
@@ -635,4 +636,7 @@ gap: 40px;
 .filter,
 .sort {
     position: relative;
+}
+.filterButton:hover, .sortButton:hover{
+    color: var(--lightBrown);
 }
