@@ -9,7 +9,7 @@ function create_brand_post_type()
             'singular_name' => 'Brand'
         ),
         'public' => true,
-        'has_archive' => false,
+        'has_archive' => true,
         'rewrite' => array('slug' => 'brand'),
         'supports' => array('title', 'editor', 'thumbnail')
     ));
@@ -30,6 +30,36 @@ function create_opskrift_post_type()
     ));
 }
 add_action('init', 'create_opskrift_post_type');
+
+function create_chef_post_type()
+{
+    register_post_type('chef', array(
+        'labels' => array(
+            'name' => 'Chefs',
+            'singular_name' => 'Brand'
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'chef'),
+        'supports' => array('title', 'editor', 'thumbnail')
+    ));
+}
+add_action('init', 'create_brand_post_type');
+
+function create_story_post_type()
+{
+    register_post_type('story', array(
+        'labels' => array(
+            'name' => 'Stories',
+            'singular_name' => 'Story'
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'stories'),
+        'supports' => array('title', 'editor', 'thumbnail')
+    ));
+}
+add_action('init', 'create_brand_post_type');
 
 
 

@@ -11,17 +11,13 @@
         
         <div class="brands-grid">
             <?php 
-            $brand_query = new WP_Query(array(
-                'posts_per_page' => -1,
-                'post_type' => 'brand'
-            ));
             
-            while($brand_query->have_posts()) {
-                $brand_query->the_post(); ?>
+            while(have_posts()) {
+                the_post(); ?>
 
                 <div class="brand-card">
                 <div class="brand-logo">
-                    <img src="<?php the_field('hero_image') ?>" alt="">
+                    <img src="<?php echo get_field('hero_image')['url']; ?>" alt="">
                 </div>
                 <div class="brand-name">
                     <h3><?php the_title() ?></h3>
