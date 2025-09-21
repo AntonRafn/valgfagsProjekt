@@ -1,16 +1,19 @@
 <?php
 
+use WpOrg\Requests\Capability;
 
 function create_brand_post_type()
 {
     register_post_type('brand', array(
+        'capability_type' => 'brand',
+        'map_meta_cap' => true,
         'labels' => array(
             'name' => 'Brands',
             'singular_name' => 'Brand'
         ),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'brand'),
+        'rewrite' => array('slug' => 'brands'),
         'supports' => array('title', 'editor', 'thumbnail')
     ));
 }
@@ -19,13 +22,15 @@ add_action('init', 'create_brand_post_type');
 function create_opskrift_post_type()
 {
     register_post_type('opskrift', array(
+        'capability_type' => 'opskrift',
+        'map_meta_cap' => true,
         'labels' => array(
             'name' => 'Opskrifter',
             'singular_name' => 'Opskrift'
         ),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'opskrift'),
+        'rewrite' => array('slug' => 'recipes'),
         'supports' => array('title', 'editor', 'thumbnail')
     ));
 }
@@ -34,9 +39,11 @@ add_action('init', 'create_opskrift_post_type');
 function create_chef_post_type()
 {
     register_post_type('chef', array(
+        'capability_type' => 'chef',
+        'map_meta_cap' => true,
         'labels' => array(
             'name' => 'Chefs',
-            'singular_name' => 'Brand'
+            'singular_name' => 'Chef'
         ),
         'public' => true,
         'has_archive' => true,
@@ -49,6 +56,8 @@ add_action('init', 'create_chef_post_type');
 function create_story_post_type()
 {
     register_post_type('story', array(
+        'capability_type' => 'story',
+        'map_meta_cap' => true,
         'labels' => array(
             'name' => 'Stories',
             'singular_name' => 'Story'
