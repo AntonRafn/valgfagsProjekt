@@ -15,14 +15,10 @@ if (filterAndSortFunction) {
     link.addEventListener('click', e => {
       e.preventDefault();
       const filter = link.textContent.trim().toLowerCase();
-      console.log('Filter clicked:', filter);
-      if (filter.includes('amateur') || filter.includes('professional')) {
-        console.log('All roles:', Array.from(recipeCards).map(card => card.dataset.authorRole));
-      }
       recipeCards.forEach(card => {
         const role = card.dataset.authorRole.toLowerCase();
         const category = card.dataset.category.toLowerCase();
-        if (filter.includes('amateur') && role.includes('amateur_chef') || filter.includes('professional') && role.includes('professional_chef') || category.includes(filter)) {
+        if (filter.includes('amateur') && role.includes('amateur_chef') || filter.includes('professionel') && role.includes('professionel_chef') || category.includes(filter)) {
           card.style.display = '';
         } else {
           card.style.display = 'none';
