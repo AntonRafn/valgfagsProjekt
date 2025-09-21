@@ -24,22 +24,25 @@
         $chef_user = get_userdata($chef_id);
         $chef_image = get_field('chef_photo', 'user_' . $chef_id);
       ?>
-
-        <a href="<?php the_permalink() ?>" class="opskriftCard">
+        <div class="opskriftCard">
+        
           <div class="card-img">
-            <img class="chefIcon" src="<?php echo ($chef_image['url'] ); ?>?>" alt="" />
+            <a href="<?php echo get_author_posts_url($chef_user->ID); ?>">
+            <img class="chefIcon" src="<?php echo ($chef_image['url'] ); ?>" alt="" />
+            </a>
+            <a href="<?php the_permalink() ?>">
             <img src="<?php echo get_field('billede_af_ret')['url'] ?>" alt="" />
           </div>
           <div class="card-indhold">
             <p><?php the_field('titel_ret') ?></p>
-
+          </a>
             <div class="rating">
               <span class="stars">★★★★★</span>
               <span class="score"><?php the_field('rating') ?></span>
               <span class="votes">| 8 ratings</span>
             </div>
           </div>
-        </a>
+        </div>
 
       <?php } ?>
 

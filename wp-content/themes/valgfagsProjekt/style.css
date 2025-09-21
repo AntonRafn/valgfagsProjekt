@@ -175,6 +175,11 @@ background: var(--hoverGreen);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.opskriftCard a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .opskrift-header {
     display: flex;
     justify-content: space-between;
