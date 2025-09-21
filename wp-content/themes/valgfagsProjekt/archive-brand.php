@@ -38,7 +38,35 @@
 
     <div class="brands-favourites">
         <h2 class="overskrifter">All beloved brands</h2>
-        <button class="filter">Filter  ⬇</button>
+        <section class="allRecipes">
+        <h2 class="overskrifter">All recipes</h2>
+        <div class="filterSortFunction">
+          <div class="filter">
+            <button class="filterButton">
+              Filter after <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="filterContent">
+              <h2 class="chefButton"></h2>
+              <a href=""> Home chefs</a>
+              <a href=""> Amateur chefs</a>
+              <a href=""> Professional chefs</a>
+              <a href="">Main course</a>
+              <a href="">Dessert</a>
+            </div>
+          </div>
+          <div class="sort">
+            <button class="sortButton">
+              Sort after <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="sortContent">
+              <a href=""> A-Z</a>
+              <a href="">Popular</a>
+              <a href=""> Newest - oldes </a>
+              <a href="">Ratings</a>
+            </div>
+          </div>
+        </div>
+      </section>
         
         <div class="brands-grid">
             <div class="brand-card">
