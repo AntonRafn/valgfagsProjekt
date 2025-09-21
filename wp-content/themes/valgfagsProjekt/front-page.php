@@ -38,7 +38,7 @@
         <div class="rundeKokke">
           <img src="<?php echo ($photo_url); ?>" alt="" />
           <p><?php echo get_field('chef_name', 'user_' . $chef->ID); ?></p>
-          <p><?php echo ($intro); ?></p>
+          <p><?php echo ($type); ?></p>
           <a href="<?php echo (get_author_posts_url($chef->ID)); ?>">See more <i class="fa-solid fa-chevron-right"></i></a>
         </div>
       <?php } ?>
