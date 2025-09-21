@@ -14,7 +14,7 @@ function create_brand_post_type()
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'brands'),
-        'supports' => array('title', 'editor', 'thumbnail')
+        'supports' => array('title', 'editor', 'thumbnail', 'author')
     ));
 }
 add_action('init', 'create_brand_post_type');
@@ -65,7 +65,7 @@ function create_story_post_type()
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'stories'),
-        'supports' => array('title', 'editor', 'thumbnail')
+        'supports' => array('title', 'editor', 'thumbnail', 'author')
     ));
 }
 add_action('init', 'create_story_post_type');
