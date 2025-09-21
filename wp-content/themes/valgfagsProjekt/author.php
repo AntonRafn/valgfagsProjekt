@@ -89,7 +89,7 @@ $user_role = ucfirst($author->roles[0]);
             $storiesByAuthor->the_post();
         ?>
             <article class="dish-card">
-                <img src="<?php echo get_field('hero-image')['url'] ?>" alt="" class="dish-img">
+                <img src="<?php echo get_field('hero_image')['url'] ?>" alt="" class="dish-img">
                 <h4><?php the_field('story_title') ?></h4>
                 <p><?php echo wp_trim_words(get_field('story_text'), 15, '...') ?></p>
 
