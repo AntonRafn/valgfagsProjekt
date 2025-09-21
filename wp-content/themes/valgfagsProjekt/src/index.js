@@ -22,7 +22,7 @@ filterLinks.forEach(link => {
       const category = card.dataset.category.toLowerCase();
 
       if ((filter.includes('amateur') && role.includes('amateur_chef')) || 
-            (filter.includes('professional') && role.includes('professional_chef')) ||
+            (filter.includes('professional') && role.includes('professional')) ||
             category.includes(filter)) {
         card.style.display = '';
       } else {
