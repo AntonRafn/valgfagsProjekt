@@ -2,7 +2,7 @@
 
 <main>
   <section class="heroSection">
-    <img src="<?php the_field('hero_image')['url'] ?>" alt="" />
+    <img src="<?php echo get_field('hero_image')['url'] ?>" alt="" />
     <div class="welcome-text">
       <h1>Welcome</h1>
       <p>
@@ -29,8 +29,8 @@
         $photo_url = $photo ? $photo['url'] : '';
       ?>
         <div class="rundeKokke">
-          <img src="<?php echo get_field('chef_photo', 'user_' . $chef->ID); ?>" alt="" />
-          <p><?php echo ($photo_url); ?></p>
+          <img src="<?php echo ($photo_url); ?>" alt="" />
+          <p><?php echo get_field('chef_name', 'user_' . $chef->ID); ?></p>
           <p><?php echo ($intro); ?></p>
           <a href="<?php echo (get_author_posts_url($chef->ID)); ?>">See more <i class="fa-solid fa-chevron-right"></i></a>
         </div>
