@@ -35,22 +35,31 @@ filterLinks.forEach(link => {
 // Sorterings funktion
 
 sortLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const sortType = link.textContent.trim().toLowerCase();
-    
-    const cardsArray = Array.from(recipeCards);
-    
-    cardsArray.sort((a, b) => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const sortType = link.textContent.trim().toLowerCase();
+      
+      console.log('Sort type:', sortType);
+      
+      const cardsArray = Array.from(recipeCards);
+      
+      console.log('Before sort - first card title:', cardsArray[0]?.dataset.title);
+      console.log('Before sort - first card date:', cardsArray[0]?.dataset.date);
+      
+      cardsArray.sort((a, b) => {
         if (sortType.includes('a-z')) {
           return a.dataset.title.localeCompare(b.dataset.title);
         } else if (sortType.includes('newest')) {
           return new Date(b.dataset.date) - new Date(a.dataset.date);
         }
+        return 0;
+      });
+      
+      console.log('After sort - first card title:', cardsArray[0]?.dataset.title);
+      console.log('After sort - first card date:', cardsArray[0]?.dataset.date);
+      
+      cardsArray.forEach(card => container.appendChild(card));
     });
-    
-    
-    cardsArray.forEach(card => container.appendChild(card));
   });
-});
+
 }

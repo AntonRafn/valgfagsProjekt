@@ -1,1 +1,55 @@
-(()=>{if(document.querySelector(".filterSortFunction")){const e=document.querySelectorAll(".filterContent a"),t=document.querySelectorAll(".opskriftCard"),a=document.querySelectorAll(".sortContent a"),o=document.querySelector(".allCards");e.forEach(e=>{e.addEventListener("click",a=>{a.preventDefault();const o=e.textContent.trim().toLowerCase();t.forEach(e=>{const t=e.dataset.authorRole.toLowerCase(),a=e.dataset.category.toLowerCase();o.includes("amateur")&&t.includes("amateur_chef")||o.includes("professional")&&t.includes("professional_chef")||a.includes(o)?e.style.display="":e.style.display="none"})})}),a.forEach(e=>{e.addEventListener("click",a=>{a.preventDefault();const r=e.textContent.trim().toLowerCase(),n=Array.from(t);n.sort((e,t)=>r.includes("a-z")?e.dataset.title.localeCompare(t.dataset.title):r.includes("newest")?new Date(t.dataset.date)-new Date(e.dataset.date):void 0),n.forEach(e=>o.appendChild(e))})})}})();
+/******/ (() => { // webpackBootstrap
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+const filterAndSortFunction = document.querySelector('.filterSortFunction');
+if (filterAndSortFunction) {
+  const filterLinks = document.querySelectorAll('.filterContent a');
+  const recipeCards = document.querySelectorAll('.opskriftCard');
+  const sortLinks = document.querySelectorAll('.sortContent a');
+  const container = document.querySelector('.allCards');
+
+  // Filter funktion
+  filterLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const filter = link.textContent.trim().toLowerCase();
+      recipeCards.forEach(card => {
+        const role = card.dataset.authorRole.toLowerCase();
+        const category = card.dataset.category.toLowerCase();
+        if (filter.includes('amateur') && role.includes('amateur_chef') || filter.includes('professional') && role.includes('professional_chef') || category.includes(filter)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Sorterings funktion
+
+  sortLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const sortType = link.textContent.trim().toLowerCase();
+      console.log('Sort type:', sortType);
+      const cardsArray = Array.from(recipeCards);
+      console.log('Before sort - first card title:', cardsArray[0]?.dataset.title);
+      console.log('Before sort - first card date:', cardsArray[0]?.dataset.date);
+      cardsArray.sort((a, b) => {
+        if (sortType.includes('a-z')) {
+          return a.dataset.title.localeCompare(b.dataset.title);
+        } else if (sortType.includes('newest')) {
+          return new Date(b.dataset.date) - new Date(a.dataset.date);
+        }
+        return 0;
+      });
+      console.log('After sort - first card title:', cardsArray[0]?.dataset.title);
+      console.log('After sort - first card date:', cardsArray[0]?.dataset.date);
+      cardsArray.forEach(card => container.appendChild(card));
+    });
+  });
+}
+/******/ })()
+;
+//# sourceMappingURL=index.js.map
