@@ -24,7 +24,14 @@
       ));
 
       foreach ($chefs as $chef) {
-        $type = in_array('professionel_chef', $chef->roles) ? 'Professional chef' : 'Amateur chef';
+        $user_roles = $chef->roles;
+        if (in_array('professionel_chef', $user_roles)) {
+          $type = 'Professional chef';
+        } elseif (in_array('amateur_chef', $user_roles)) {
+          $type = 'Amateur chef';
+        } else {
+          $type = '';
+        }
         $photo = get_field('chef_photo', 'user_' . $chef->ID);
         $photo_url = $photo ? $photo['url'] : '';
       ?>
