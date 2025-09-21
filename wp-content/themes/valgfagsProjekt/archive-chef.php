@@ -1,3 +1,4 @@
+<?php get_header() ?>
 <main>
       <section>
         <div class="heroSection">
@@ -238,3 +239,4 @@
       </section>
       
     </main>
+    <?php get_footer() ?>
