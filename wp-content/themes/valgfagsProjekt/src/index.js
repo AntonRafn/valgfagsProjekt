@@ -18,7 +18,9 @@ filterLinks.forEach(link => {
       const role = card.dataset.authorRole.toLowerCase();
       const category = card.dataset.category.toLowerCase();
 
-      if (role.includes(filter) || category.includes(filter)) {
+      if ((filter.includes('amateur') && role.includes('amateur_chef')) || 
+            (filter.includes('professional') && role.includes('professional_chef')) ||
+            category.includes(filter)) {
         card.style.display = '';
       } else {
         card.style.display = 'none';
@@ -40,11 +42,11 @@ sortLinks.forEach(link => {
     const cardsArray = Array.from(recipeCards);
     
     cardsArray.sort((a, b) => {
-      if (sortType === 'a-z') {
-        return a.dataset.title.localeCompare(b.dataset.title);
-      } else if (sortType.includes('newest')) {
-        return new Date(b.dataset.date) - new Date(a.dataset.date);
-      }
+        if (sortType.includes('a-z')) {
+          return a.dataset.title.localeCompare(b.dataset.title);
+        } else if (sortType.includes('newest')) {
+          return new Date(b.dataset.date) - new Date(a.dataset.date);
+        }
     });
     
     

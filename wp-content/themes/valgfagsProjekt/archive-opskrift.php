@@ -34,9 +34,7 @@
         </button>
         <div class="sortContent">
           <a href=""> A-Z</a>
-          <a href="">Popular</a>
-          <a href=""> Newest - oldes </a>
-          <a href="">Ratings</a>
+          <a href=""> Newest - oldest </a>
         </div>
       </div>
     </div>
