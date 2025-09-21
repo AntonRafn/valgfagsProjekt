@@ -18,7 +18,7 @@ if (filterAndSortFunction) {
       recipeCards.forEach(card => {
         const role = card.dataset.authorRole.toLowerCase();
         const category = card.dataset.category.toLowerCase();
-        if (filter.includes('amateur') && role.includes('amateur_chef') || filter.includes('professionel') && role.includes('professionel_chef') || category.includes(filter)) {
+        if (filter.includes('amateur') && role.includes('amateur_chef') || filter.includes('professional') && role.includes('professional_chef') || category.includes(filter)) {
           card.style.display = '';
         } else {
           card.style.display = 'none';
