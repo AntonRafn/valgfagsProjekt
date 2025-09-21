@@ -6,26 +6,41 @@ const filterLinks = document.querySelectorAll('.filterContent a');
 const recipeCards = document.querySelectorAll('.opskriftCard');
 const sortLinks = document.querySelectorAll('.sortContent a');
 const container = document.querySelector('.allCards');
+const showAll = document.querySelector('.showAllButton');
+
+
 
 
 // Filter funktion
 filterLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const filter = link.textContent.trim().toLowerCase();
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const filter = link.textContent.trim().toLowerCase();
 
-    recipeCards.forEach(card => {
-      const role = card.dataset.authorRole.toLowerCase();
-      const category = card.dataset.category.toLowerCase();
+      console.log('Filter clicked:', filter);
+      
+      if (filter.includes('amateur') || filter.includes('professional')) {
+        console.log('All roles:', Array.from(recipeCards).map(card => card.dataset.authorRole));
+      }
 
-      if ((filter.includes('amateur') && role.includes('amateur_chef')) || 
+      recipeCards.forEach(card => {
+        const role = card.dataset.authorRole.toLowerCase();
+        const category = card.dataset.category.toLowerCase();
+
+        if ((filter.includes('amateur') && role.includes('amateur_chef')) || 
             (filter.includes('professional') && role.includes('professional_chef')) ||
             category.includes(filter)) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
+  });
+
+showAll.addEventListener('click', () => {
+  recipeCards.forEach(card => {
+    card.style.display = '';
   });
 });
 
@@ -39,12 +54,8 @@ sortLinks.forEach(link => {
       e.preventDefault();
       const sortType = link.textContent.trim().toLowerCase();
       
-      console.log('Sort type:', sortType);
-      
       const cardsArray = Array.from(recipeCards);
       
-      console.log('Before sort - first card title:', cardsArray[0]?.dataset.title);
-      console.log('Before sort - first card date:', cardsArray[0]?.dataset.date);
       
       cardsArray.sort((a, b) => {
         if (sortType.includes('a-z')) {
@@ -54,9 +65,6 @@ sortLinks.forEach(link => {
         }
         return 0;
       });
-      
-      console.log('After sort - first card title:', cardsArray[0]?.dataset.title);
-      console.log('After sort - first card date:', cardsArray[0]?.dataset.date);
       
       cardsArray.forEach(card => container.appendChild(card));
     });

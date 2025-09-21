@@ -8,12 +8,17 @@ if (filterAndSortFunction) {
   const recipeCards = document.querySelectorAll('.opskriftCard');
   const sortLinks = document.querySelectorAll('.sortContent a');
   const container = document.querySelector('.allCards');
+  const showAll = document.querySelector('.showAllButton');
 
   // Filter funktion
   filterLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const filter = link.textContent.trim().toLowerCase();
+      console.log('Filter clicked:', filter);
+      if (filter.includes('amateur') || filter.includes('professional')) {
+        console.log('All roles:', Array.from(recipeCards).map(card => card.dataset.authorRole));
+      }
       recipeCards.forEach(card => {
         const role = card.dataset.authorRole.toLowerCase();
         const category = card.dataset.category.toLowerCase();
@@ -25,6 +30,11 @@ if (filterAndSortFunction) {
       });
     });
   });
+  showAll.addEventListener('click', () => {
+    recipeCards.forEach(card => {
+      card.style.display = '';
+    });
+  });
 
   // Sorterings funktion
 
@@ -32,10 +42,7 @@ if (filterAndSortFunction) {
     link.addEventListener('click', e => {
       e.preventDefault();
       const sortType = link.textContent.trim().toLowerCase();
-      console.log('Sort type:', sortType);
       const cardsArray = Array.from(recipeCards);
-      console.log('Before sort - first card title:', cardsArray[0]?.dataset.title);
-      console.log('Before sort - first card date:', cardsArray[0]?.dataset.date);
       cardsArray.sort((a, b) => {
         if (sortType.includes('a-z')) {
           return a.dataset.title.localeCompare(b.dataset.title);
@@ -44,8 +51,6 @@ if (filterAndSortFunction) {
         }
         return 0;
       });
-      console.log('After sort - first card title:', cardsArray[0]?.dataset.title);
-      console.log('After sort - first card date:', cardsArray[0]?.dataset.date);
       cardsArray.forEach(card => container.appendChild(card));
     });
   });

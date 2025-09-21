@@ -17,6 +17,9 @@
   <section>
     <h2 class="overskrifter">Recipes</h2>
     <div class="filterSortFunction">
+      <div class="showAll">
+        <button class="filterButton showAllButton">Show All</button>
+      </div>
       <div class="filter">
         <button class="filterButton">
           Filter after <i class="fa-solid fa-chevron-down"></i>
