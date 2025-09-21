@@ -30,7 +30,7 @@ function create_opskrift_post_type()
         ),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'recipes'),
+        'rewrite' => array('slug' => 'opskrift'),
         'supports' => array('title', 'editor', 'thumbnail', 'author')
     ));
 }
