@@ -13,34 +13,24 @@ const showAll = document.querySelector('.showAllButton');
 
 // Filter funktion
 filterLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const filter = link.textContent.trim().toLowerCase();
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const filter = link.textContent.trim().toLowerCase();
 
-      console.log('Filter clicked:', filter);
-      
-      if (filter.includes('amateur') || filter.includes('professional')) {
-        console.log('All roles:', Array.from(recipeCards).map(card => card.dataset.authorRole));
-      }
+    recipeCards.forEach(card => {
+      const role = card.dataset.authorRole.toLowerCase();
+      const category = card.dataset.category.toLowerCase();
 
-      recipeCards.forEach(card => {
-        const role = card.dataset.authorRole.toLowerCase();
-        const category = card.dataset.category.toLowerCase();
-
-        console.log('Checking card - Role:', role, 'Filter:', filter);
-        console.log('Amateur match:', filter.includes('amateur') && role.includes('amateur_chef'));
-        console.log('Professional match:', filter.includes('professional') && role.includes('professional'));
-
-        if ((filter.includes('amateur') && role.includes('amateur_chef')) || 
-            (filter.includes('professional') && role.includes('professional')) ||
+      if ((filter.includes('amateur') && role.includes('amateur_chef')) || 
+            (filter.includes('professional') && role.includes('professionel')) ||
             category.includes(filter)) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
     });
   });
+});
 
 showAll.addEventListener('click', () => {
   recipeCards.forEach(card => {
