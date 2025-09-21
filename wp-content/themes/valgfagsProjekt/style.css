@@ -426,10 +426,7 @@ padding-left: 40px;
     color: #BA8B6B;
 }
 
-.rundeKokke img:hover {
-    width: 360px;
-    height: 360px;
-}
+
 
 /*Opskrift cards*/
 .allCards {
@@ -496,9 +493,6 @@ padding-left: 40px;
 }
 
 
-.lilleOpskriftCard:hover {
-    width: 382px;
-}
 
 /* Blog posts*/
 .blogPosts {

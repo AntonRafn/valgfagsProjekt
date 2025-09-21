@@ -2,39 +2,39 @@
 
 <main>
       <section class="heroSection">
-        <img src="./assetsen/images/COLOURBOX65738800.jpg" alt="" />
+        <img src="<?php the_field('hero_image') ?>" alt="" />
         <div class="welcome-text">
           <h1>Welcome</h1>
           <p>
-            Discover a world of flavors, stories, and culinary inspiration.
-            Whether you’re a professional chef, an ambitious amateur, or a
-            passionate home cook, our platform brings you expert recipes, food
-            stories, and trusted kitchenware recommendations. Share your
-            passion, learn from others, and take your cooking to the next level.
+            <?php the_field('front_page_welcome') ?>
           </p>
         </div>
       </section>
       <section>
         <h2 class="overskrifter">Meet the chefs</h2>
         <div class="chefsSection">
-          <div class="rundeKokke">
-            <img src="./assetsen/images/marry&john.jpg" alt="" />
-            <p>Marry & John S.</p>
-            <p>Professional chefs</p>
-            <a href="">See more <i class="fa-solid fa-chevron-right"></i></a>
+          <?php
+
+$roles = array('amateur_chef', 'professionel_chef');
+$chefs = get_users(array(
+    'role__in' => $roles,
+    'number'  => 3,
+    'orderby' => 'user_registered',
+    'order'   => 'DESC',
+));
+
+foreach ($chefs as $chef){
+  $type = in_array('professionel_chef', $chef->roles) ? 'Professional chef' : 'Amateur chef';
+
+  ?>
+  <div class="rundeKokke">
+            <img src="<?php echo get_field('chef_photo', 'user_' . $chef->ID); ?>" alt="" />
+            <p><?php echo get_field('chef_name', 'user_' . $chef->ID); ?></p>
+            <p><?php echo($intro); ?></p>
+            <a href="<?php echo (get_author_posts_url($chef->ID)); ?>">See more <i class="fa-solid fa-chevron-right"></i></a>
           </div>
-          <div class="rundeKokke">
-            <img src="./assetsen/images/anja&sally.jpg" alt="" />
-            <p>Anja & Sally T.</p>
-            <p>Home chef</p>
-            <a href="">See more <i class="fa-solid fa-chevron-right"></i></a>
-          </div>
-          <div class="rundeKokke">
-            <img src="./assetsen/images/Lisa.jpg" alt="" />
-            <p>Lisa L.</p>
-            <p>Amateur chef</p>
-            <a href="">See more <i class="fa-solid fa-chevron-right"></i></a>
-          </div>
+<?php } ?> 
+          
         </div>
       </section>
       <section>
