@@ -14,7 +14,7 @@ function create_brand_post_type()
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'brands'),
-        'supports' => array('title', 'editor', 'thumbnail', 'author')
+        'supports' => array('title', 'editor', 'thumbnail', 'author', 'comments')
     ));
 }
 add_action('init', 'create_brand_post_type');
@@ -31,27 +31,12 @@ function create_opskrift_post_type()
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'opskrift'),
-        'supports' => array('title', 'editor', 'thumbnail', 'author')
+        'supports' => array('title', 'editor', 'thumbnail', 'author', 'comments')
     ));
 }
 add_action('init', 'create_opskrift_post_type');
 
-function create_chef_post_type()
-{
-    register_post_type('chef', array(
-        'capability_type' => 'chef',
-        'map_meta_cap' => true,
-        'labels' => array(
-            'name' => 'Chefs',
-            'singular_name' => 'Chef'
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'rewrite' => array('slug' => 'chef'),
-        'supports' => array('title', 'editor', 'thumbnail')
-    ));
-}
-add_action('init', 'create_chef_post_type');
+
 
 function create_story_post_type()
 {
