@@ -14,7 +14,8 @@ function create_brand_post_type()
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'brands'),
-        'supports' => array('title', 'editor', 'thumbnail', 'author', 'comments')
+        'supports' => array('title', 'editor', 'thumbnail', 'author', 'comments'),
+        'menu_icon' => 'dashicons-admin-multisite'
     ));
 }
 add_action('init', 'create_brand_post_type');
@@ -31,7 +32,8 @@ function create_opskrift_post_type()
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'opskrift'),
-        'supports' => array('title', 'editor', 'thumbnail', 'author', 'comments')
+        'supports' => array('title', 'editor', 'thumbnail', 'author', 'comments'),
+        'menu_icon' => 'dashicons-carrot'
     ));
 }
 add_action('init', 'create_opskrift_post_type');
@@ -50,7 +52,8 @@ function create_story_post_type()
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'stories'),
-        'supports' => array('title', 'editor', 'thumbnail', 'author')
+        'supports' => array('title', 'editor', 'thumbnail', 'author'),
+        'menu_icon' => 'dashicons-products'
     ));
 }
 add_action('init', 'create_story_post_type');
