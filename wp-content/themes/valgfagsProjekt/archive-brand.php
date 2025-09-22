@@ -1,128 +1,99 @@
 <?php get_header(); ?>
 
+<main>
+    <?php 
+      $archive_settings = get_page_by_path('archive-headings');
+
+      $brands_hero = get_field('brands_hero_image', $archive_settings->ID);
+      $brands_intro = get_field('brands_hero_heading', $archive_settings->ID);
+      ?>
+    
+      <section class="heroSection">
+        <img src="<?php echo ($brands_hero['url']); ?>" />
+        <div class="welcome-text">
+    
+
 <div class="brands-intro">
     <h1>Brands We Trust</h1>
-    <p>Discover the kitchenware brands our chefs swear by. 
-    Each one is chosen for their quality, craftsmanship, and timeless design.</p>
+    <p><?php echo($brands_intro) ?></p>
 </div>
+</section>
 
-    <div class="brands-favourites">
-        <h2 class="overskrifter">Most Used Brands</h2>
-        
-        <div class="brands-grid">
-            <?php 
-            
-            while(have_posts()) {
-                the_post(); ?>
+<div class="brands-favourites">
+  <h2 class="overskrifter">Newest Brands</h2>
 
-                <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="<?php echo get_field('hero_image')['url']; ?>" alt="">
-                </div>
-                <div class="brand-name">
-                    <h3><?php the_title() ?></h3>
-                </div>
-                <div class="brand-description">
-                    <p>Used in 21% of all recipes</p>
-                <div class="rating-number">9.7</div>
-                </div>
-            </div>
+  <div class="brands-grid">
+    <?php
+      $args = array(
+        'post_type' => 'brand',
+        'posts_per_page' => 3,
+        'orderby' => 'date',
+        'order' => 'DESC',
+      );
 
+      $newBrands = new WP_Query($args);
+      while ($newBrands->have_posts()) {
+        $newBrands->the_post();?>
 
-            <?php }
-            ?>
-
+        <div class="brand-card">
+      <div class="brand-logo">
+        <img src="<?php the_field('hero_image') ?>" alt="">
+      </div>
+      <div class="brand-name">
+        <h3><?php the_field('brand_name') ?></h3>
+      </div>
+      <div class="brand-description">
+        <p><?php echo wp_trim_words(get_field('story_text'), 10, '...') ?></p>
+        <div class="rating">
+          <span class="stars">★★★★</span>
+          <span class="score"> 4.8</span>
         </div>
-
+      </div>
     </div>
 
-    <div class="brands-favourites">
-        <h2 class="overskrifter">All beloved brands</h2>
-        <section class="allRecipes">
-        <h2 class="overskrifter">All recipes</h2>
+    <?php } ?>
+
+    
+
+
+  <div class="brands-favourites">
+  <h2 class="overskrifter">All Brands</h2>
         <div class="filterSortFunction">
-          <div class="filter">
-            <button class="filterButton">
-              Filter after <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="filterContent">
-              <h2 class="chefButton"></h2>
-              <a href=""> Home chefs</a>
-              <a href=""> Amateur chefs</a>
-              <a href=""> Professional chefs</a>
-              <a href="">Main course</a>
-              <a href="">Dessert</a>
-            </div>
-          </div>
-          <div class="sort">
-            <button class="sortButton">
-              Sort after <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="sortContent">
-              <a href=""> A-Z</a>
-              <a href="">Popular</a>
-              <a href=""> Newest - oldes </a>
-              <a href="">Ratings</a>
-            </div>
-          </div>
+      
+      <div class="sort">
+        <button class="sortButton">
+          Sort after <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="sortContent">
+          <a href=""> A-Z</a>
+          <a href=""> Newest - oldest </a>
         </div>
-      </section>
-        
-        <div class="brands-grid">
-            <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="https://picsum.photos/400/300" alt="">
-                </div>
-                <div class="brand-name">
-                    <h3 >Master Craft</h3>
-                </div>
-                <div class="brand-description">
-                    <p>Used in 21% of all recipes</p>
-                <div class="rating-number">9.7</div>
-                </div>
-            </div>
-
-            <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="https://picsum.photos/400/300" alt="">
-                </div>
-                <div class="brand-name">
-                    <h3>Master Craft</h3>
-                </div>
-                <div class="brand-description">
-                    <p>Used in 21% of all recipes</p>
-                <div class="rating-number">9.7</div>
-                </div>
-            </div>
-
-            <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="https://picsum.photos/400/300" alt="">
-                </div>
-                <div class="brand-name">
-                    <h3>Master Craft</h3>
-                </div>
-                <div class="brand-description">
-                    <p>Used in 21% of all recipes</p>
-                <div class="rating-number">9.7</div>
-                </div>
-            </div>
-
-            <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="https://picsum.photos/400/300" alt="">
-                </div>
-                <div class="brand-name">
-                    <h3>Master Craft</h3>
-                </div>
-                <div class="brand-description">
-                    <p>Used in 21% of all recipes</p>
-                <div class="rating-number">9.7</div>
-                </div>
-            </div>
-        </div>
-
+      </div>
     </div>
+
+  <div class="brands-grid">
+ 
+    <?php while(have_posts()) {
+        the_post()?>
+    <div class="brand-card">
+      <div class="brand-logo">
+        <img src="<?php the_field('hero_image')['url'] ?>" alt="">
+      </div>
+      <div class="brand-name">
+        <h3><?php the_field('brand_name') ?></h3>
+      </div>
+      <div class="brand-description">
+        <p><?php echo wp_trim_words(get_field('story_text'), 10, '...') ?></p>
+        <div class="rating">
+          <span class="stars">★★★★</span>
+          <span class="score"> 3.8</span>
+        </div>
+      </div>
+    </div>
+    <?php } ?>
+
+  </div>
+</div>
 
 
 
