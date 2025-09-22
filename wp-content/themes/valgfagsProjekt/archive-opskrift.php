@@ -5,11 +5,15 @@
 
   <section class="heroSection">
     <div class="alleOpskHero">
-      <img src="./img/heroAlleOpskrifter.jpg" alt="" />
+      <?php 
+      $archive_settings = get_page_by_path('archive-headings');
+
+      $recipes_hero = get_field('recipes_hero_image', $archive_settings->ID);
+      $recipes_intro = get_field('recipes_hero_heading', $archive_settings->ID);
+      ?>
+      <img src="<?php echo ($recipe_hero['url']); ?>" alt="" />
       <p>
-        Dive into a collection of inspiring dishes, from simple home-cooked
-        meals to refined gourmet creations. Each recipe comes with tips to
-        help you cook with confidence and creativity.
+        <?php echo($recipes_intro) ?>
       </p>
     </div>
   </section>
