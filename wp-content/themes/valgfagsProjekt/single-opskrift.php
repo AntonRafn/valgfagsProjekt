@@ -25,8 +25,14 @@
                         </div>
                     </div>
                     <div class="author">
-                        <img src="<?php echo get_field('kok_billede')['url']; ?>" alt="" />
-                        <p><?php the_field('kok_navn') ?></p>
+                        <?php
+                        $author_id = get_the_author_meta('ID');
+                        $chef_name = get_field('chef_name', 'user_' . $author_id);
+                        $chef_photo = get_field('chef_photo', 'user_' . $author_id);
+                        $author_url = get_author_posts_url($author_id);
+                        ?>
+                        <a href="<?php echo $author_url ?>"><img src="<?php echo $chef_photo['url'] ?>" alt="" /></a>
+                        <p><?php echo $chef_name ?></p>
                     </div>
                 </div>
                 <div class="details">
