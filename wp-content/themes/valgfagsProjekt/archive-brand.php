@@ -58,18 +58,6 @@
 
   <div class="brands-favourites">
   <h2 class="overskrifter">All Brands</h2>
-        <div class="filterSortFunction">
-      
-      <div class="sort">
-        <button class="sortButton">
-          Sort after <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="sortContent">
-          <a href=""> A-Z</a>
-          <a href=""> Newest - oldest </a>
-        </div>
-      </div>
-    </div>
 
   <div class="brands-grid">
  
