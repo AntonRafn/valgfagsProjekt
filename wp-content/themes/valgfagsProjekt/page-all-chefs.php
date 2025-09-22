@@ -3,7 +3,7 @@
       <section>
         <div class="heroSection">
           <img
-            src="<?php the_field('chefs_hero')['url'] ?>"
+            src="<?php echo get_field('chefs_hero')['url'] ?>"
             alt="Hero billede til
         kokke siden"
           />
