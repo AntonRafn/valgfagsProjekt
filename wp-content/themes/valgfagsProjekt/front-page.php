@@ -69,9 +69,9 @@ $recipes = new WP_Query($args);
 
       <div class="lilleOpskriftCard">
         <div class="card-img">
-          <img class="chefIcon" src="<?php echo($chef_image)['url'] ?>" alt="" />
+          <a href="<?php echo get_author_posts_url($chef_user); ?>"><img class="chefIcon" src="<?php echo($chef_image)['url'] ?>" alt="" /></a>
           <img
-            src="<?php get_field('billede_af_ret')['url'] ?>"
+            src="<?php echo get_field('billede_af_ret')['url'] ?>"
             alt="" />
         </div>
         <div class="card-indhold">
