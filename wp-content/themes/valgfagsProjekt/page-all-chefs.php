@@ -22,27 +22,29 @@
       </section>
       <section>
         <h2 class="overskrifter">Meet the chefs</h2>
+        
         <div class="chefsSection">
-          <div class="rundeKokke">
-            <img src="./assetsen/images/marry&john.jpg" alt="" />
-            <p>Marry & John S.</p>
-            <p>Professional chefs</p>
-            <a href="">See more <i class="fa-solid fa-chevron-right"></i></a>
+            <?php
+        $roles = array('amateur_chef', 'professionel_chef');
+        $chefs = get_users(array(
+        'role__in' => $roles,
+        'orderby' => 'user_registered',
+        'order' => 'DESC',
+        ));
+
+        foreach ($chefs as $chef) {
+        $photo = get_field('chef_photo', 'user_' . $chef->ID); ?>
+        
+        <div class="rundeKokke">
+            <img src="<?php echo esc_url($photo['url']); ?>" alt="" />
+            <p><?php echo esc_html(get_field('chef_name', 'user_' . $chef->ID)); ?></p>
+            <p><?php echo esc_html($chef->roles[0]); ?></p>
+            <a href="<?php echo get_author_posts_url($chef->ID); ?>">See more <i class="fa-solid fa-chevron-right"></i></a>
           </div>
-          <div class="rundeKokke">
-            <img src="./assetsen/images/anja&sally.jpg" alt="" />
-            <p>Anja & Sally T.</p>
-            <p>Home chef</p>
-            <a href="">See more <i class="fa-solid fa-chevron-right"></i></a>
-          </div>
-          <div class="rundeKokke">
-            <img src="./assetsen/images/Lisa.jpg" alt="" />
-            <p>Lisa L.</p>
-            <p>Amateur chef</p>
-            <a href="">See more <i class="fa-solid fa-chevron-right"></i></a>
-          </div>
+          <?php } ?>
         </div>
       </section>
+      
       <section class="dishes">
         <h2 class="overskrifter">Signature dishes</h2>
         <div class="dishesInfo welcome-text">

@@ -15,9 +15,10 @@
 
     <div class="nav-links">
       <div class="dropdown">
-        <button class="dropdownButton">
+        <a href="/chefs" class="dropdownButton">
           Chefs <i class="fa-solid fa-chevron-down"></i>
-        </button>
+        </a>
+  
         <div class="dropdownContent">
           <a href="#">Home chefs</a>
           <a href="#">Amateur chefs</a>
