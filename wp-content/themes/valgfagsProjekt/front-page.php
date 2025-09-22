@@ -50,45 +50,45 @@
     <div class="allCards">
       <?php
       $args = array(
-      'post_type' => 'opskrift',
-      'posts_per_page' => 3,
-      'orderby' => 'date',
-      'order' => 'DESC',
-);
+        'post_type' => 'opskrift',
+        'posts_per_page' => 3,
+        'orderby' => 'date',
+        'order' => 'DESC',
+      );
 
-$recipes = new WP_Query($args);
-    while ($recipes->have_posts()){
-      $recipes->the_post();
-      
+      $recipes = new WP_Query($args);
+      while ($recipes->have_posts()) {
+        $recipes->the_post();
+
         $chef_id = get_post_field('post_author', get_the_ID());
         $chef_user = get_userdata($chef_id);
         $chef_image = get_field('chef_photo', 'user_' . $chef_id);
       ?>
 
-      
 
-      <div class="lilleOpskriftCard">
-        <div class="card-img">
-          <a href="<?php echo get_author_posts_url($chef_user); ?>"><img class="chefIcon" src="<?php echo($chef_image)['url'] ?>" alt="" /></a>
-          <img
-            src="<?php echo get_field('billede_af_ret')['url'] ?>"
-            alt="" />
-        </div>
-        <div class="card-indhold">
-          <p><?php the_field('titel_ret') ?></p>
 
-          <div class="rating">
-            <span class="stars">★★★★★</span>
-            <span class="score"> <?php the_field('rating') ?></span>
-            <span class="votes">| 8 ratings</span>
+        <div class="lilleOpskriftCard">
+          <div class="card-img">
+            <a href="<?php echo get_author_posts_url($chef_user->ID); ?>"><img class="chefIcon" src="<?php echo ($chef_image)['url'] ?>" alt="" /></a>
+            <img
+              src="<?php echo get_field('billede_af_ret')['url'] ?>"
+              alt="" />
+          </div>
+          <div class="card-indhold">
+            <p><?php the_field('titel_ret') ?></p>
+
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="score"> <?php the_field('rating') ?></span>
+              <span class="votes">| 8 ratings</span>
+            </div>
           </div>
         </div>
-      </div>
 
-    <?php } ?>
+      <?php } ?>
 
-      
-      
+
+
 </main>
 
 <?php get_footer() ?>
