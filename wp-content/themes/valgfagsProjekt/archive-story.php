@@ -26,7 +26,7 @@
             <span class="BPauthor"> <?php the_author(); ?></span>
             <span class="dato"><?php echo get_the_date('d.m.Y'); ?></span>
           </div>
-          <a href="">
+          <a href="<?php the_permalink() ?>">
             <?php echo wp_trim_words(get_field('story_text'), 15, '...') ?>
             <i class="fa-solid fa-chevron-right"></i>
           </a>
