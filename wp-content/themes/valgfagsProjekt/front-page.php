@@ -70,9 +70,9 @@
         <div class="lilleOpskriftCard">
           <div class="card-img">
             <a href="<?php echo get_author_posts_url($chef_user->ID); ?>"><img class="chefIcon" src="<?php echo ($chef_image)['url'] ?>" alt="" /></a>
-            <img
+            <a href="<?php echo get_permalink(); ?>"><img
               src="<?php echo get_field('billede_af_ret')['url'] ?>"
-              alt="" />
+              alt="" /></a>
           </div>
           <div class="card-indhold">
             <p><?php the_field('titel_ret') ?></p>
