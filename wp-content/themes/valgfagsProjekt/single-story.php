@@ -1,4 +1,7 @@
+<?php get_header() ?>
 <main>
+    <?php while(have_posts()) {
+        the_post()?>
       <section>
         <div class="heroSection">
           <img
@@ -18,5 +21,6 @@
           </p>
         </div>
       </section>
-
+        <?php } ?>
     </main>
+    <?php get_footer() ?>
