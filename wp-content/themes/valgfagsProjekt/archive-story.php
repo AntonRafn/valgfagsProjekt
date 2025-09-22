@@ -14,6 +14,7 @@
       <?php echo($stories_intro) ?>
     </p>
   </section>
+
   <?php while (have_posts()) {
     the_post(); ?>
     <section class="blogPosts">
@@ -32,6 +33,7 @@
         </div>
         <img src="<?php the_field('hero_image')['url'] ?>" alt="" />
       </div>
+    </section>
     <?php } ?>
 
 </main>
