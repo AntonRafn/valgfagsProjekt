@@ -1,14 +1,17 @@
 <?php get_header() ?>
 <main>
   <section class="heroSection">
+    <?php 
+      $archive_settings = get_page_by_path('archive-headings');
+
+      $stories_hero = get_field('stories_hero_image', $archive_settings->ID);
+      $stories_intro = get_field('stories_hero_heading', $archive_settings->ID);
+      ?>
     <img
-      src="./assetsen/images/heroBP.jpg"
-      alt="Hero billede til blog siden med en dreng og hans far" />
+      src="<?php echo ($stories_hero['url']); ?>"
+      alt="" />
     <p class="welcome-text">
-      Explore inspiring stories from kitchens around the world — from chefs’
-      journeys and culinary traditions to personal food memories and tips.
-      Discover the passion behind the recipes and let the stories enrich
-      your own cooking experience.
+      <?php echo($stories_intro) ?>
     </p>
   </section>
   <?php while (have_posts()) {
