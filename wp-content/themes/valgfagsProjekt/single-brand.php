@@ -77,11 +77,11 @@
 
         <div class="brands-favourites">
             <h2>Chef's Remark</h2>
-            <?php
-            if (comments_open() || get_comments_number()) {
+
+            <?php if (comments_open()) {
                 comments_template();
-            }
-            ?>
+            } ?>
+
         </div>
 
     </div>

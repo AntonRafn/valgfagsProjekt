@@ -68,7 +68,8 @@ function valgfagsProjekt_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'valgfagsProjekt_enqueue_styles');
 
-function valgfagsProjekt_enqueue_scripts() {
+function valgfagsProjekt_enqueue_scripts()
+{
     wp_enqueue_script('main-valgfagsProjekt-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'valgfagsProjekt_enqueue_scripts');

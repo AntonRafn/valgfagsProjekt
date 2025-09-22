@@ -82,30 +82,8 @@
         <section class="TipsSection">
             <h2 class="overskrifter">Tips</h2>
             <div class="tips">
-                <!-- Først sættes can_comment til false - herefter tjekker vi om den user, der er logget ind er en pro/amatør chef - hvis det er tilfældet sættes can_comment til true. Hvis tilfældet er at can_comment er false, så gemmer vi alt det fra comment formen, som ikke er selve "kommentarene" - og omvendt hvis can_comment er true ændrer vi ikke i formen. -->
-                <?php
-                $can_comment = false;
-                if (is_user_logged_in()) {
-                    $user = wp_get_current_user();
-                    $allowed_roles = array('professionel_chef', 'amateur_chef');
-                    $can_comment = array_intersect($allowed_roles, $user->roles);
-                }
 
-                $form_args = array();
-                if (!$can_comment) {
-                    $form_args = array(
-                        'comment_field' => '',
-                        'submit_button' => '',
-                        'title_reply' => '',
-                        'comment_notes_before' => '',
-                        'comment_notes_after' => '',
-                        'must_log_in' => '',
-                        'logged_in_as' => ''
-                    );
-                }
 
-                comment_form($form_args);
-                ?>
             </div>
         </section>
 
@@ -113,12 +91,11 @@
     ?>
     <section class="comments">
         <h2 class="overskrifter">Comments</h2>
-        <?php
-        comment_form();
-        ?>
+        <?php if (comments_open()) {
+            comments_template();
+        } ?>
     </section>
 </main>
 
-</body>
 
 <?php get_footer(); ?>
