@@ -43,7 +43,7 @@
         <h3><?php the_field('brand_name') ?></h3>
       </div>
       <div class="brand-description">
-        <p><?php echo wp_trim_words(get_field('story_text'), 10, '...') ?></p>
+        <p><?php echo wp_trim_words(get_field('brand_description'), 10, '...') ?></p>
         <div class="rating">
           <span class="stars">★★★★</span>
           <span class="score"> 4.8</span>
@@ -71,7 +71,7 @@
         <h3><?php the_field('brand_name') ?></h3>
       </div>
       <div class="brand-description">
-        <p><?php echo wp_trim_words(get_field('story_text'), 10, '...') ?></p>
+        <p><?php echo wp_trim_words(get_field('brand_description'), 10, '...') ?></p>
         <div class="rating">
           <span class="stars">★★★★</span>
           <span class="score"> 3.8</span>
