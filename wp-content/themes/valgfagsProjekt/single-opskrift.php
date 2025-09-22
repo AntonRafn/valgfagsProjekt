@@ -84,33 +84,29 @@
             <div class="tips">
                 <!-- Først sættes can_comment til false - herefter tjekker vi om den user, der er logget ind er en pro/amatør chef - hvis det er tilfældet sættes can_comment til true. Hvis tilfældet er at can_comment er false, så gemmer vi alt det fra comment formen, som ikke er selve "kommentarene" - og omvendt hvis can_comment er true ændrer vi ikke i formen. -->
                 <?php
-                add_filter('comment_form_defaults', function ($defaults) {
-                    $can_comment = false;
+                $can_comment = false;
+                if (is_user_logged_in()) {
+                    $user = wp_get_current_user();
+                    $allowed_roles = array('professionel_chef', 'amateur_chef');
+                    $can_comment = array_intersect($allowed_roles, $user->roles);
+                }
 
-                    if (is_user_logged_in()) {
-                        $user = wp_get_current_user();
-                        $allowed_roles = array('professionel_chef', 'amateur_chef');
-                        $can_comment = array_intersect($allowed_roles, $user->roles);
-                    }
+                $form_args = array();
+                if (!$can_comment) {
+                    $form_args = array(
+                        'comment_field' => '',
+                        'submit_button' => '',
+                        'title_reply' => '',
+                        'comment_notes_before' => '',
+                        'comment_notes_after' => '',
+                        'must_log_in' => '',
+                        'logged_in_as' => ''
+                    );
+                }
 
-                    if (!$can_comment) {
-                        $defaults['comment_field'] = '';
-                        $defaults['submit_button'] = '';
-                        $defaults['title_reply'] = '';
-                        $defaults['comment_notes_before'] = '';
-                        $defaults['comment_notes_after'] = '';
-                        $defaults['must_log_in'] = '';
-                        $defaults['logged_in_as'] = '';
-                    }
-
-                    return $defaults;
-                });
-
-                comments_template();
+                comment_form($form_args);
                 ?>
-
             </div>
-
         </section>
 
     <?php }
@@ -118,11 +114,7 @@
     <section class="comments">
         <h2 class="overskrifter">Comments</h2>
         <?php
-        remove_all_filters('comment_form_defaults');
-        
-        if (comments_open() || get_comments_number()) {
-            comments_template();
-        }
+        comment_form();
         ?>
     </section>
 </main>
