@@ -17,7 +17,7 @@
             <div class="text-box">
                 <h2>Trævarer fra Kampmann</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet  porttitor turpis. In quis justo et est lacinia aliquet. Aenean  
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet porttitor turpis. In quis justo et est lacinia aliquet. Aenean
                 </p>
             </div>
             <div class="image-box">
@@ -29,54 +29,59 @@
             <h2>Products</h2>
         </div>
         <div class="carousel">
-        <div class="text-image-pair-two">
-            <div class="image-box-two">
-                <img src="https://thispersondoesnotexist.com/" alt="Description of image">
+            <div class="text-image-pair-two">
+                <div class="image-box-two">
+                    <img src="https://thispersondoesnotexist.com/" alt="Description of image">
+                </div>
+                <div class="text-box-two">
+                    <h2>Trævarer fra Kampmann</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet porttitor turpis. In quis justo et est lacinia aliquet. Aenean
+                    </p>
+                    <p>6/10</p>
+                </div>
+
             </div>
-            <div class="text-box-two">
-                <h2>Trævarer fra Kampmann</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet  porttitor turpis. In quis justo et est lacinia aliquet. Aenean  
-                </p>
-                <p>6/10</p>
+
+            <div class="text-image-pair-two">
+                <div class="image-box-two">
+                    <img src="https://thispersondoesnotexist.com/" alt="Description of image">
+                </div>
+                <div class="text-box-two">
+                    <h2>Trævarer fra Kampmann</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet porttitor turpis. In quis justo et est lacinia aliquet. Aenean
+                    </p>
+                    <p>6/10</p>
+                </div>
+
             </div>
-            
+
+            <div class="text-image-pair-two">
+                <div class="image-box-two">
+                    <img src="https://thispersondoesnotexist.com/" alt="Description of image">
+                </div>
+                <div class="text-box-two">
+                    <h2>Trævarer fra Kampmann</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet porttitor turpis. In quis justo et est lacinia aliquet. Aenean
+                    </p>
+                    <p>6/10</p>
+                </div>
+
+            </div>
         </div>
 
-        <div class="text-image-pair-two">
-            <div class="image-box-two">
-                <img src="https://thispersondoesnotexist.com/" alt="Description of image">
-            </div>
-            <div class="text-box-two">
-                <h2>Trævarer fra Kampmann</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet  porttitor turpis. In quis justo et est lacinia aliquet. Aenean  
-                </p>
-                <p>6/10</p>
-            </div>
-            
-        </div>
-
-        <div class="text-image-pair-two">
-            <div class="image-box-two">
-                <img src="https://thispersondoesnotexist.com/" alt="Description of image">
-            </div>
-            <div class="text-box-two">
-                <h2>Trævarer fra Kampmann</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet  porttitor turpis. In quis justo et est lacinia aliquet. Aenean  
-                </p>
-                <p>6/10</p>
-            </div>
-            
-        </div>
-        </div>
 
 
-        
 
         <div class="brands-favourites">
             <h2>Chef's Remark</h2>
+            <?php
+            if (comments_open() || get_comments_number()) {
+                comments_template();
+            }
+            ?>
         </div>
 
     </div>

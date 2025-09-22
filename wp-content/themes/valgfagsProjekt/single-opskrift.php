@@ -76,23 +76,27 @@
                     </ol>
                 </div>
         </section>
-    
 
 
-    <section class="TipsSection">
-        <h2 class="overskrifter">Tips</h2>
-        <div class="tips">
-            <p><?php the_field('tips') ?></p>
-            
-        </div>
 
-    </section>
+        <section class="TipsSection">
+            <h2 class="overskrifter">Tips</h2>
+            <div class="tips">
+                <p><?php the_field('tips') ?></p>
+
+            </div>
+
+        </section>
 
     <?php }
     ?>
     <section class="comments">
         <h2 class="overskrifter">Comments</h2>
-
+        <?php
+        if (comments_open() || get_comments_number()) {
+            comments_template();
+        }
+        ?>
     </section>
 </main>
 
