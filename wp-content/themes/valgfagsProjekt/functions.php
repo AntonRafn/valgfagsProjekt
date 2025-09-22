@@ -15,7 +15,7 @@ function create_brand_post_type()
         'has_archive' => true,
         'rewrite' => array('slug' => 'brands'),
         'supports' => array('title', 'editor', 'thumbnail', 'author', 'comments'),
-        'menu_icon' => 'dashicons-admin-filter'
+        'menu_icon' => 'dashicons-editor-bold'
     ));
 }
 add_action('init', 'create_brand_post_type');
