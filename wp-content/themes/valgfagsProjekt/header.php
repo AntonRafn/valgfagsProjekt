@@ -15,7 +15,7 @@
 
     <div class="nav-links">
       <div class="dropdown">
-        <a href="/chefs" class="dropdownButton">
+        <a href="/all-chefs" class="dropdownButton">
           Chefs <i class="fa-solid fa-chevron-down"></i>
         </a>
   
