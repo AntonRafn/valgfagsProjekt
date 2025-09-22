@@ -1,3 +1,4 @@
+<?php get_header() ?>
 <div class="brands-favourites">
   <h2 class="overskrifter">Newest Brands</h2>
 
