@@ -3,7 +3,7 @@
       <section>
         <div class="heroSection">
           <img
-            src="./assetsen/images/profKokHero.jpg"
+            src="<?php the_field('chefs_hero')['url'] ?>"
             alt="Hero billede til
         kokke siden"
           />
@@ -44,7 +44,7 @@
           <?php } ?>
         </div>
       </section>
-      
+
       <section class="dishes">
         <h2 class="overskrifter">Signature dishes</h2>
         <div class="dishesInfo welcome-text">

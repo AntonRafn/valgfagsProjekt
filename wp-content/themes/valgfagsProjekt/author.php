@@ -66,15 +66,6 @@ $user_role = ucfirst($author->roles[0]);
 
 
 
-
-    <section>
-        <div class="section-divider">
-            <h3><?php the_field('chef_name') ?>'s Comments</h3>
-        </div>
-    </section>
-
-
-
     <section>
         <div class="section-divider">
             <h3><?php the_field('chef_name') ?>'Stories</h3>
