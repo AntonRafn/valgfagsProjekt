@@ -82,7 +82,31 @@
         <section class="TipsSection">
             <h2 class="overskrifter">Tips</h2>
             <div class="tips">
-                <p><?php the_field('tips') ?></p>
+                <!-- Først sættes can_comment til false - herefter tjekker vi om den user, der er logget ind er en pro/amatør chef - hvis det er tilfældet sættes can_comment til true. Hvis tilfældet er at can_comment er false, så gemmer vi alt det fra comment formen, som ikke er selve "kommentarene" - og omvendt hvis can_comment er true ændrer vi ikke i formen. -->
+                <?php
+                add_filter('comment_form_defaults', function ($defaults) {
+                    $can_comment = false;
+
+                    if (is_user_logged_in()) {
+                        $user = wp_get_current_user();
+                        $allowed_roles = array('professionel_chef', 'amateur_chef');
+                        $can_comment = array_intersect($allowed_roles, $user->roles);
+                    }
+
+                    if (!$can_comment) {
+                        $defaults['comment_field'] = '';
+                        $defaults['submit_button'] = '';
+                        $defaults['title_reply'] = '';
+                        $defaults['comment_notes_before'] = '';
+                        $defaults['comment_notes_after'] = '';
+                        $defaults['must_log_in'] = '';
+                    }
+
+                    return $defaults;
+                });
+
+                comments_template();
+                ?>
 
             </div>
 
