@@ -17,7 +17,7 @@
 
       <div class="brand-card">
         <div class="brand-logo">
-          <img src="<?php the_field('hero_image') ?>" alt="">
+          <img src="<?php echo the_field('hero_image')['url'] ?>" alt="">
         </div>
         <div class="brand-name">
           <h3><?php the_field('brand_name') ?></h3>
@@ -44,7 +44,7 @@
       the_post() ?>
       <div class="brand-card">
         <div class="brand-logo">
-          <img src="<?php the_field('hero_image')['url'] ?>" alt="">
+          <img src="<?php echo the_field('hero_image')['url'] ?>" alt="">
         </div>
         <div class="brand-name">
           <h3><?php the_field('brand_name') ?></h3>
