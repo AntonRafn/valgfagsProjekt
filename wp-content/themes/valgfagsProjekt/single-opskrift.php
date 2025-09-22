@@ -100,6 +100,7 @@
                         $defaults['comment_notes_before'] = '';
                         $defaults['comment_notes_after'] = '';
                         $defaults['must_log_in'] = '';
+                        $defaults['logged_in_as'] = '';
                     }
 
                     return $defaults;
@@ -117,6 +118,8 @@
     <section class="comments">
         <h2 class="overskrifter">Comments</h2>
         <?php
+        remove_all_filters('comment_form_defaults');
+        
         if (comments_open() || get_comments_number()) {
             comments_template();
         }
