@@ -11,7 +11,7 @@
       $recipes_hero = get_field('recipes_hero_image', $archive_settings->ID);
       $recipes_intro = get_field('recipes_hero_heading', $archive_settings->ID);
       ?>
-      <img src="<?php echo ($recipe_hero['url']); ?>" alt="" />
+      <img src="<?php echo ($recipes_hero['url']); ?>" alt="" />
       <p>
         <?php echo($recipes_intro) ?>
       </p>
