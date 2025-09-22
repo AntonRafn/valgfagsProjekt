@@ -49,7 +49,7 @@ $user_role = ucfirst($author->roles[0]);
                 $recipesByAuthor->the_post();
             ?>
                 <article class="dish-card">
-                    <img src="<?php echo get_field('billede_af_ret')['url'] ?>" alt="" class="dish-img">
+                    <a href="<?php the_permalink() ?>"><img src="<?php echo get_field('billede_af_ret')['url'] ?>" alt="" class="dish-img"></a>
                     <h4><?php the_field('titel_ret') ?></h4>
                     <p><?php the_field('description') ?></p>
 
